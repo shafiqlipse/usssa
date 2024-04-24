@@ -1,0 +1,36 @@
+.officials-page {
+  h1 {
+    font-size: 19px;
+    font-weight: bold;
+  }
+  .officiallist {
+    table {
+      thead {
+        tr {
+          th {
+            text-transform: uppercase;
+            font-weight: bold;
+            background-color: rgb(46, 46, 46);
+            color: white;
+            &:first-child{
+                text-align: left;
+            }
+          }
+        }
+      }
+      tbody {
+        tr {
+          td {
+            align-items: start;
+            img {
+              width: 50px;
+            }
+            &:first-child{
+                text-align: left;
+            }
+          }
+        }
+      }
+    }
+  }
+}

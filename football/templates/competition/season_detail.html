@@ -1,0 +1,82 @@
+{% extends "dashboard/dashboard.html" %} {%load static%}
+<!---->
+{% block title %}{{competition}}{% endblock %}
+<!---->
+
+{%block content%}
+
+<div class="football-details">
+  <form action="" method="post">
+    {% csrf_token %} {{ formset.as_p }}
+    <button class="btn-submit">save groups</button>
+  </form>
+
+  <div class="groups">
+    {% for group in groups %} {{ group.name }}
+    <ul>
+      {% for team in group.teams.all %}
+      <li>{{ team.name }}</li>
+      {% endfor %}
+    </ul>
+    {% endfor %}
+  </div>
+
+  <form
+    id="generateFixturesForm"
+    action="{% url 'generate_fixtures' competition.id %}"
+    method="post"
+  >
+    {% csrf_token %}
+    <button type="button" id="generateFixturesButton" class="btn-submit">
+      Generate Fixtures
+    </button>
+  </form>
+  <div class="fixtures">
+    <div class="ficture">
+      {%for fixture in fixtures%}
+      <div class="fixture flex">
+        <div class="fix-left">
+          <span>{{fixture.team1}} </span
+          ><img src="{{fixture.team1.school.badge.url}}" alt="" />
+        </div>
+        <div class="fix-center">
+          {% if fixture.date %}
+          <a href="{%url 'fixture' fixture.id%}">{{fixture.date}}</a>{% else %}
+          <a href="{%url 'fixture' fixture.id%}">DETAILS</a>{% endif %}
+        </div>
+        <div class="fix-right">
+          <img src="{{fixture.team2.school.badge.url}}" alt="" />
+          <span> {{fixture.team2}}</span>
+        </div>
+      </div>
+      <hr>
+      {%empty%}
+    </div>
+    <p>No Fixtures yet</p>
+    {% endfor%}
+  </div>
+</div>
+<script>
+  document
+    .getElementById("generateFixturesButton")
+    .addEventListener("click", function () {
+      var form = document.getElementById("generateFixturesForm");
+      var formData = new FormData(form);
+
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", form.action, true);
+      xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+      xhr.onload = function () {
+        var response = JSON.parse(xhr.responseText);
+        if (response.success) {
+          alert("Fixtures generated successfully");
+          // Add additional logic to update the UI if needed
+        } else {
+          alert("Error: " + response.message);
+        }
+      };
+      xhr.send(formData);
+    });
+</script>
+
+{%endblock%}

@@ -1,0 +1,151 @@
+{% extends "dashboard/dashboard.html" %}
+
+<!--static-->
+{% block title %}{{championship.name}}{% endblock %}
+<!--static-->
+{% load static %}
+<!--khfufufu-->
+{% block content %}
+<div class="disciplines-page">
+  <div class="sport-cards grid3">
+    <div class="card" style="width: 100%">
+      <img
+        class="card-img-top"
+        src="https://m.media-amazon.com/images/I/71ewkynC2XL._AC_UF894,1000_QL80_.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">FOOTBALL</h5>
+        <p class="card-text">
+          Create competitions, groups, and fixtures in all championships related
+          to FOOTBALL.
+        </p>
+        <a href="{%url 'football'%}" class="btn btn-danger">Get started</a>
+      </div>
+    </div>
+    <div class="card" style="width: 100%">
+      <img
+        class="card-img-top"
+        src="https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/creighton.sidearmsports.com/images/2021/12/29/021321_001_basketball.JPG"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">BASKETBALL 3X3</h5>
+        <p class="card-text">
+          Create competitions, groups, and fixtures in all championships related
+          to BASKETBALL 3X3.
+        </p>
+        <a href="{%url 'basketball3'%}" class="btn btn-danger"
+          >BASKETBALL 3X3</a
+        >
+      </div>
+    </div>
+    <div class="card" style="width: 100%">
+      <img
+        class="card-img-top"
+        src="https://static.owayo-cdn.com/newhp/img/magazin/basketballstatistikEN/basketball-statistics-670.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">BASKETBALL 5X5</h5>
+        <p class="card-text">
+          Create competitions, groups, and fixtures in all championships related
+          to BASKETBALL 5X5.
+        </p>
+        <a href="#" class="btn btn-danger">Get started</a>
+      </div>
+    </div>
+    <div class="card" style="width: 100%">
+      <img
+        class="card-img-top"
+        src="https://gsport.co.za/wp-content/uploads/2022/12/20221221-World-Netball.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">NETBALL</h5>
+        <p class="card-text">
+          Create competitions, groups, and fixtures in all championships related
+          to NETBALL.
+        </p>
+        <a href="#" class="btn btn-danger">Go NETBALL</a>
+      </div>
+    </div>
+    <div class="card" style="width: 100%">
+      <img
+        class="card-img-top"
+        src="https://theathleticbuild.com/wp-content/uploads/2022/10/shutterstock_1929143213.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">VOLLEYBALL</h5>
+        <p class="card-text">
+          Create competitions, groups, and fixtures in all championships related
+          to VOLLEYBALL.
+        </p>
+        <a href="#" class="btn btn-danger">VOLLEYBALL</a>
+      </div>
+    </div>
+    <div class="card" style="width: 100%">
+      <img
+        class="card-img-top"
+        src="https://media.yourschoolgames.com/images/Handball_1_Adobe_Stock.width-550.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">HANDBALL</h5>
+        <p class="card-text">
+          Create competitions, groups, and fixtures in all championships related
+          to HANDBALL.
+        </p>
+        <a href="#" class="btn btn-danger">HANDBALL</a>
+      </div>
+    </div>
+    <div class="card" style="width: 100%">
+      <img
+        class="card-img-top"
+        src="https://static.toiimg.com/thumb/msid-63570493,width-1280,height-720,resizemode-4/63570493.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">WOODBALL</h5>
+        <p class="card-text">
+          Create competitions, groups, and fixtures in all championships related
+          to WOODBALL.
+        </p>
+        <a href="#" class="btn btn-danger">WOODBALL</a>
+      </div>
+    </div>
+    <div class="card" style="width: 100%">
+      <img
+        class="card-img-top"
+        src="https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/7/2023/08/GettyImages-1629448064-scaled.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">RUGBY 7s</h5>
+        <p class="card-text">
+          Create competitions, groups, and fixtures in all championships related
+          to RUGBY 7s.
+        </p>
+        <a href="#" class="btn btn-danger">RUGBY 7s</a>
+      </div>
+    </div>
+    <div class="card" style="width: 100%">
+      <img
+        class="card-img-top"
+        src="https://cdn.shopify.com/s/files/1/0149/0401/files/rugby-balls_1024x1024.jpg?7247673708428121461"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">RUGBY 15s</h5>
+        <p class="card-text">
+          Create competitions, groups, and fixtures in all championships related
+          to RUGBY 15s.
+        </p>
+        <a href="#" class="btn btn-danger">RUGBY 15s</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

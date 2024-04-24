@@ -1,0 +1,36 @@
+{% extends "dashboard/dashboard.html" %} {%load static%}
+<!--title starts-->
+{%block title%}{{athlete.name}} {% endblock %}
+<!--title ends-->
+{% block content %}
+
+<div class="athlete-page">
+  <div class="top">
+    <div class="imagery">
+      <img src="{{official.photo.url}}" alt="" />
+    </div>
+    <div class="details">
+      <h1>{{official.fname}} {{official.lname}}</h1>
+      <h4>{{official.role}}</h4>
+      <hr />
+      <div class="dets">
+        <div class="doets">
+          <h2>official's Info</h2>
+          <hr />
+          <p><span>NIN: </span>{{official.nin}}</p>
+          <p><span>SPORT: </span>{{official.sport}}</p>
+          <p><span>GEnder: </span>{{official.gender}}</p>
+          <p><span>Email: </span>{{official.email}}</p>
+          <p><span>Contact </span>{{official.phone_number}}</p>
+        </div>
+        <div class="doets">
+          <h2>BIO</h2>
+          <hr />
+          <p><span></span>{{official.bio}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,66 @@
+.standings-page {
+  padding: 20px 5%;
+}
+.standings-page h1 {
+  text-transform: uppercase;
+}
+.standings-page .group h2 {
+  margin-left: 20px;
+  padding: 10px;
+}
+.standings-page .group h3 {
+  margin-left: 20px;
+  padding: 10px;
+  border-left: solid 3px red;
+}
+.standings-page .group .grp_name {
+  padding: 10px;
+  margin: 20px 0 0 0;
+  text-transform: uppercase;
+  border-radius: 0;
+}
+.standings-page .group .standings {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 5px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: inherit;
+}
+.standings-page .group .standings .standings-header,
+.standings-page .group .standings .standings-row {
+  display: contents;
+}
+.standings-page .group .standings .standings-header div,
+.standings-page .group .standings .standings-row div {
+  padding: 5px;
+  text-transform: uppercase;
+  text-align: left;
+  font-weight: 400;
+}
+.standings-page .group .standings .standings-header div:first-child,
+.standings-page .group .standings .standings-row div:first-child {
+  width: 150px;
+}
+.standings-page .group .standings .standings-header div:first-child:nth-child(4),
+.standings-page .group .standings .standings-row div:first-child:nth-child(4) {
+  background-color: green;
+  border-left: 2px solid #009a4d;
+}
+.standings-page .group .standings .standings-header div:first-child a,
+.standings-page .group .standings .standings-row div:first-child a {
+  color: inherit;
+  font-size: 14px;
+}
+.standings-page .group .standings .standings-header div:first-child a:hover,
+.standings-page .group .standings .standings-row div:first-child a:hover {
+  color: red;
+  font-weight: bold;
+}
+.standings-page .group .standings .standings-header div {
+  font-weight: bold;
+  background-color: rgba(155, 155, 155, 0.2705882353);
+}
+.standings-page .group .standings .standings-row.first-row {
+  border-right: 2px solid green;
+}/*# sourceMappingURL=standings.css.map */

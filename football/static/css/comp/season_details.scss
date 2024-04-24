@@ -1,0 +1,44 @@
+.football-details {
+  .fixtures {
+    width: 50%;
+    .ficture {
+      .fixture {
+        width: 100%;
+        justify-content: space-between;
+        .fix-left {
+          width: 35%;
+          span {
+            text-transform: capitalize;
+            font-weight: 600;
+            font-size: 12px;
+          }
+          img {
+            width: 60px;
+          }
+        }
+        .fix-right {
+          width: 35%;
+          text-align: right;
+          span {
+            text-transform: capitalize;
+            font-weight: 600;
+            font-size: 12px;
+          }
+          img {
+            width: 60px;
+          }
+        }
+        .fix-center {
+          width: 20%;
+          padding: 10px;
+          background-color: rgb(236, 236, 236);
+          text-align: center;
+          a {
+            font-weight: bold;
+            color: rgb(220, 5, 5);
+          }
+        }
+      }
+    }
+  }
+}

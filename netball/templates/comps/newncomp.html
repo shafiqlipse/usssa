@@ -1,0 +1,56 @@
+{% extends "dashboard/dashboard.html" %} {%load static%}
+<!--title starts-->
+
+{%block title%}Add Competition {% endblock %}
+
+<!--title ends-->
+
+{% block content %}
+
+<div class="competition-page">
+  <div class="competition">
+    <h1>Edit Competition</h1>
+    <form
+      action=""
+      method="POST"
+      class="form-ctrl"
+      enctype="multipart/form-data"
+    >
+      {% csrf_token %}
+      <div class="fields flex">
+        <div class="icon"><i class="fa fa-trophy"></i></div>
+        <div class="leftion">
+          <h1>Basic Info</h1>
+
+          <div class="field flex">
+            <label>Championship </label>
+            {{form.championship}}
+          </div>
+          <div class="field flex">
+            <label>competition name <span>(15-30 characters)</span></label>
+            {{form.name}}
+          </div>
+          <div class="field flex">
+            <label>{{ form.gender.label}}</label> {{form.gender}}
+          </div>
+
+
+
+          <div class="field flex">
+            <label>{{ form.age.label}}</label> {{form.age}}
+          </div>
+
+          <div class="field flex">
+            <label>{{ form.comtype.label}}</label> {{form.comtype}}
+          </div>
+          <div class="field flex">
+            <label>{{ form.comcat.label}}</label> {{form.comcat}}
+          </div>
+          <button type="submit" class="btn-submit">Save competition</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  {% endblock %}
+</div>

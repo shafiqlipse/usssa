@@ -1,0 +1,41 @@
+{% extends 'dashboard/dashboard.html'%}
+
+<!--static-->
+{% load static %}
+<!--khfufufu-->
+<!--title starts-->
+{%block title%}Teams {% endblock %}
+<!--title ends-->
+{% block content %}
+<div class="officials-page">
+  <div class="flex">
+    <h1>Teams</h1>
+    <a href="{% url 'newteam'%}" class="btn-green">New Team</a>
+  </div>
+  <div class="officiallist">
+    <table id="myTable" class="display">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>sport</th>
+          <th>gender</th>
+          <th>age</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for athlete in teams%}
+        <tr>
+          <td>{{athlete.school.school_name}}</td>
+
+          <td>{{athlete.sport}}</td>
+          <td>{{athlete.gender}}</td>
+          <td>{{athlete.age}}</td>
+        </tr>
+
+        {%endfor%}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock %}

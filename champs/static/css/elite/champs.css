@@ -1,0 +1,42 @@
+.champs-page {
+  padding: 10px;
+}
+.champs-page .championships {
+  margin: 20px 0;
+}
+.champs-page .championships .champ-card {
+  padding: 20px;
+  width: 100%;
+  height: 200px;
+  background-color: #fff;
+  box-shadow: 1px 1px 10px 1px #eee;
+  border-radius: 5px;
+  justify-content: flex-start;
+}
+.champs-page .championships .champ-card:hover {
+  text-decoration: none;
+  box-shadow: 1px 1px 10px 1px #ccc;
+}
+.champs-page .championships .champ-card .card-thumb {
+  padding: 10px;
+  background-color: #eee;
+  height: 100%;
+  width: 200px;
+}
+.champs-page .championships .champ-card .card-thumb img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.champs-page .championships .champ-card .card-words {
+  flex-direction: column;
+  padding: 20px;
+}
+.champs-page .championships .champ-card .card-words h3 {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.champs-page .championships .champ-card .card-words .control-card {
+  width: 100%;
+}/*# sourceMappingURL=champs.css.map */

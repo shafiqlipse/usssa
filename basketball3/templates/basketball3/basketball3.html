@@ -1,0 +1,23 @@
+{% extends "dashboard/dashboard.html" %}
+<!---->
+{% block title %}{{ championship.name }}{% endblock %}
+<!---->
+{% load static %} {% block content %}
+<div class="football-page">
+  <form action="" method="post" class="form-control">
+    {% csrf_token %} {{ cform.as_p }} {% if cform.errors %}
+    <ul>
+      {% for field, errors in cform.errors.items %} {% for error in errors %}
+      <li>{{ field }}: {{ error }}</li>
+      {% endfor %} {% endfor %}
+    </ul>
+    {% endif %}
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+  <div class="comps">
+    {% for comp in comps %}
+    <div class="comp"><a href="{%url 'comp' comp.id%}">{{ comp.name }}</a></div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

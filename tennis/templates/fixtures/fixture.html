@@ -1,0 +1,38 @@
+{% extends 'dashboard/dashboard.html'%} {% block content%}
+
+<div class="fixture-page glue">
+  <div class="teams grid3">
+    <div class="logos">
+      <div class="log">
+        <img src="{{fixture.team1.school.school_profile.badge.url}}" alt="" />
+      </div>
+    </div>
+    <div class="fixture">
+      <div class="fix grid3">
+        <div class="teami">
+          <h2>{{fixture.team1}}</h2>
+        </div>
+        <div class="teamwi">
+          <h2>{{fixture.season.competition}}</h2>
+          <p>{{fixture.season}}</p>
+        </div>
+        <div class="teami">
+          <h2>{{fixture.team2}}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="logos">
+      <div class="log">
+        <img src="{{fixture.team2.school.school_profile.badge.url}}" alt="" />
+      </div>
+    </div>
+  </div>
+
+  <div class="add_official">
+    <form action="" method="post" class="official_form">
+      {%csrf_token%} {{cform.official}} {{cform.match_role}}
+      <button type="submit">Save Changes</button>
+    </form>
+  </div>
+</div>
+{%endblock%}

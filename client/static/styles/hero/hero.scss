@@ -1,0 +1,41 @@
+.home-page {
+  .homme-page {
+    width: 100%;
+    height: 100vh;
+    background-image: url(https://c4.wallpaperflare.com/wallpaper/892/527/605/football-pitch-wallpaper-preview.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .hero-section {
+      flex-direction: column;
+      padding: 200px;
+      height: 100%;
+      justify-content: flex-start;
+      background-color: #ffffff15;
+      backdrop-filter: blur(0.6em);
+      @media (max-width: 990px) {
+        padding: 10%;
+        
+      }
+      @media (max-width: 690px) {
+        padding: 10px;
+        
+      }
+      h1 {
+        margin: 20px 0;
+        font-size: 3em;
+        text-align: center;
+        @media (max-width: 990px) {
+          font-size: 2em;
+        }
+      }
+      p {
+        margin: 20px 0;
+        text-align: center;
+        @media (max-width: 990px) {
+            font-size: 14px;
+          }
+      }
+    }
+  }
+}

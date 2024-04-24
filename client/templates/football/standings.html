@@ -1,0 +1,50 @@
+{% extends 'main/Base.html'%}
+<!--  -->
+{%block content%}
+<div class="standings-page">
+  <h1>Football Standings</h1>
+  <hr />
+  <div class="stands grid2">
+    <div class="group">
+      {% for data in standings_data %}
+      <h2>{{ data.competition.season.championship }} {{ data.competition.season.name }} - {{ data.competition.name }}</h2>
+
+      {% for group_data in data.standings %}
+      <h3>{{ group_data.group.name }} Standings</h3>
+
+      <div class="grp_name glue">
+        <h4>{{ group_data.group.name }}</h4>
+      </div>
+      <div class="standings glue">
+        <div class="standings-header">
+          <div>Team</div>
+          <div>P</div>
+          <div>W</div>
+          <div>D</div>
+          <div>L</div>
+          <div>GF</div>
+          <div>GA</div>
+          <div>GD</div>
+          <div>Pts</div>
+        </div>
+        {% for team, standings in group_data.standings %}
+        <div class="standings-row{% if forloop.first %} first-row{% endif %}">
+          <div><a href="">{{ team }}</a></div>
+          <div>{{ standings.played }}</div>
+          <div>{{ standings.won }}</div>
+          <div>{{ standings.drawn }}</div>
+          <div>{{ standings.lost }}</div>
+          <div>{{ standings.gs }}</div>
+          <div>{{ standings.gc }}</div>
+          <div>{{ standings.gd }}</div>
+          <div>{{ standings.points }}</div>
+        </div>
+        {% endfor %}
+      </div>
+
+      {% endfor %} {% endfor %}
+    </div>
+  </div>
+</div>
+
+{%endblock%}

@@ -1,0 +1,56 @@
+.fixtures-page {
+  padding: 10px 5%;
+}
+.fixtures-page h1 {
+  text-transform: capitalize;
+  font-size: 2em;
+  margin: 20px 0;
+}
+.fixtures-page hr {
+  width: 100%;
+  margin: 10px 0;
+}
+.fixtures-page .page-grid {
+  width: 520px;
+}
+.fixtures-page .page-grid .mid-column {
+  width: 100%;
+}
+.fixtures-page .page-grid .mid-column .fixture-groups {
+  padding: 20px;
+  margin: 10px 0;
+}
+.fixtures-page .page-grid .mid-column .fixture-groups h2 {
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.fixtures-page .page-grid .mid-column .fixture-groups .fixtures {
+  width: 100%;
+}
+.fixtures-page .page-grid .mid-column .fixture-groups .fixtures .fixtue {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  gap: 10px;
+  align-items: center;
+}
+.fixtures-page .page-grid .mid-column .fixture-groups .fixtures .fixtue .fixture {
+  justify-content: space-between;
+}
+.fixtures-page .page-grid .mid-column .fixture-groups .fixtures .fixtue .fixture img {
+  width: 30px;
+}
+.fixtures-page .page-grid .mid-column .fixture-groups .fixtures .fixtue .fixture span {
+  width: 100%;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.fixtures-page .page-grid .mid-column .fixture-groups .fixtures .fixtue .mid {
+  background-color: rgba(251, 251, 251, 0.2705882353);
+  padding: 5px;
+  text-align: center;
+}
+.fixtures-page .page-grid .mid-column .fixture-groups .fixtures .date {
+  text-align: center;
+  font-size: 12px;
+}/*# sourceMappingURL=fixtures.css.map */

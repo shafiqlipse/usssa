@@ -1,0 +1,90 @@
+.officials-page {
+  border-radius: 10px;
+  width: 100%;
+  padding: 20px;
+  margin: 10px;
+}
+.officials-page h1 {
+  font-size: 1.5em;
+  text-transform: capitalize;
+  font-weight: bold;
+  margin: 10px 0;
+}
+.officials-page .officiallist .filter .formis {
+  align-items: flex-end;
+}
+.officials-page .officiallist .filter .formis .field {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.officials-page .officiallist .filter .formis .field input,
+.officials-page .officiallist .filter .formis .field select,
+.officials-page .officiallist .filter .formis .field textarea {
+  width: 100%;
+  padding: 10px;
+  border: 0;
+  border-radius: 10px;
+  color: inherit;
+}
+.officials-page .officiallist .filter .formis .field label {
+  margin: 10px 0;
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 1em;
+}
+.officials-page .officiallist .filter .formis .field #id_athletes {
+  width: 200px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.officials-page .officiallist .filter .formis .field #id_athletes label {
+  color: red;
+}
+.officials-page .officiallist .filter .formis button {
+  height: 40px;
+  margin: 0;
+}
+.officials-page .officiallist .titles {
+  margin: 20px 0 0 0;
+  background-color: rgb(48, 48, 48);
+  padding: 0 10px;
+  color: white;
+}
+.officials-page .officiallist .titles span {
+  padding: 10px 0;
+  text-transform: capitalize;
+  font-weight: 400;
+  font-size: 17px;
+}
+.officials-page .officiallist .official-list .officiall {
+  align-items: center;
+  padding: 10px;
+}
+.officials-page .officiallist .official-list .officiall :nth-child(3) {
+  width: 150px;
+}
+.officials-page .officiallist .official-list .officiall :nth-child(7) {
+  width: 150px;
+}
+.officials-page .officiallist .official-list .officiall img {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+}
+.officials-page .officiallist .official-list .officiall a {
+  color: inherit;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+.officials-page .officiallist .official-list .officiall a:hover {
+  color: red;
+}
+.officials-page .officiallist .official-list .officiall span {
+  font-size: 14px;
+  text-transform: capitalize;
+}
+.officials-page .officiallist .official-list .officiall span:hover {
+  color: red;
+}/*# sourceMappingURL=officials.css.map */

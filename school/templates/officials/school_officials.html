@@ -1,0 +1,42 @@
+{% extends "dashboard/dashboard.html" %}
+
+<!--static-->
+{% block title %}Officials{% endblock %}
+<!--static-->
+{% load static %}
+<!--khfufufu-->
+{% block content %}
+<div class="officials-page glue">
+  <div class="officials-page">
+    <div class="flex">
+      <h1>Officials</h1>
+      <a href="{% url 'addofficial'%}" class="btn-green">new official</a>
+    </div>
+    <div class="officiallist">
+      <table id="myTable" class="display">
+        <thead>
+          <tr>
+            <th>Photo</th>
+            <th>Name</th>
+            <th>nin</th>
+            <th>role</th>
+            <th>gender</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for athlete in officials%}
+          <tr>
+            <td><img src="{{athlete.photo.url}}" alt="" /></td>
+            <td>{{athlete.name}}</td>
+            <td>{{athlete.nin}}</td>
+            <td>{{athlete.role}}</td>
+            <td>{{athlete.gender}}</td>
+          </tr>
+
+          {%endfor%}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}

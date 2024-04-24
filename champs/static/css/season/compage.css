@@ -1,0 +1,69 @@
+.competition-page .competition-menu {
+  padding: 10px;
+  background-color: rgb(83, 83, 83);
+}
+.competition-page .competition-menu h3 {
+  margin: 10px;
+  width: 200px;
+}
+@media (max-width: 768px) {
+  .competition-page .competition-menu .chomp-nav {
+    display: none;
+  }
+}
+.competition-page .competition-menu .chomp-nav .nav-item {
+  margin: 0 10px;
+}
+.competition-page .competition-menu .more {
+  display: none;
+}
+@media (max-width: 768px) {
+  .competition-page .competition-menu .more {
+    display: inline;
+  }
+}
+.competition-page .competitiondetails {
+  padding: 20px;
+}
+@media (max-width: 768px) {
+  .competition-page .competitiondetails {
+    padding: 0;
+  }
+}
+.competition-page .competitiondetails .groups {
+  margin: 20px;
+  list-style: none;
+}
+@media (max-width: 768px) {
+  .competition-page .competitiondetails .groups {
+    margin: 10px;
+  }
+}
+.competition-page .competitiondetails .groups .group {
+  background-color: rgba(255, 255, 255, 0.1450980392);
+  box-shadow: 1px 1px 10px 1px rgba(120, 120, 120, 0.5882352941);
+  border-radius: 10px;
+}
+.competition-page .competitiondetails .groups .group h3 {
+  padding: 10px;
+  background-color: rgb(109, 109, 109);
+  color: white;
+}
+.competition-page .competitiondetails .groups .group .teams {
+  padding: 10px;
+  flex-direction: column;
+}
+.competition-page .competitiondetails .groups .group .teams .team {
+  margin: 10px 0;
+  text-transform: capitalize;
+}
+.competition-page .competitiondetails .groups .group .teams .team a {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 10px;
+  font-weight: 600;
+  color: inherit;
+}
+.competition-page .competitiondetails .groups .group .teams .team a:hover {
+  color: red;
+}/*# sourceMappingURL=compage.css.map */

@@ -1,0 +1,65 @@
+{% extends "dashboard/dashboard.html" %}
+
+<!--static-->
+{% block title %}Athletes{% endblock %}
+<!--static-->
+{% load static %}
+<!--khfufufu-->
+{% block content %}
+<div class="officials-page">
+  <div class="flex">
+    <h1>Athletes</h1>
+    <a href="{% url 'addathlete'%}" class="btn-green">New Athlete</a>
+  </div>
+
+  <div class="officiallist">
+    <form id="paymentForm" method="POST" >
+      {% csrf_token %}
+      <table id="myTable" class="display">
+        <thead>
+          <tr>
+            <th>Select</th>
+            <th>Photo</th>
+            <th>Name</th>
+            <th>NIN</th>
+            <th>Sport</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for athlete in athletes %}
+          <tr>
+            <td>
+              <input
+                type="checkbox"
+                name="selected_athletes"
+                value="{{ athlete.id }}"
+              />
+            </td>
+            <td>
+              {% if athlete.photo %}
+              <img src="{{ athlete.photo.url }}" alt="" />
+              {% else %}
+              <img src="{% static 'images/profile.png' %}" alt="" />
+              {% endif %}
+            </td>
+            <td>
+              <a href="{% url 'athlete' athlete.id %}">{{ athlete.name }}</a>
+            </td>
+            <td>{{ athlete.lin }}</td>
+            <td>{{ athlete.sport }}</td>
+            <td>{{ athlete.gender }}</td>
+            <td>{{ athlete.age }}</td>
+            <td><a href="{% url 'updateathlete' athlete.id %}">Edit</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <button type="submit">Pay Selected Athletes</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

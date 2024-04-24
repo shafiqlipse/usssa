@@ -1,0 +1,86 @@
+.team-page {
+  padding: 10px 5%;
+  .team-head {
+    align-items: center;
+    justify-content: flex-start;
+    img {
+      width: 100px;
+      margin-right: 30px;
+    }
+    .team-text {
+      h1 {
+        font-size: 20px;
+      }
+    }
+  }
+  hr {
+    margin: 10px 0;
+  }
+  .team-grid {
+    .center {
+      .fixture-groups {
+        .fixture-group {
+          padding: 20px;
+          margin: 10px 0;
+          h2 {
+            font-weight: 500;
+            text-transform: capitalize;
+            //   text-align: center;
+          }
+          .fixtures {
+            width: 100%;
+            .fixtue {
+              .fixture {
+                img {
+                  width: 30px;
+                  padding: 1px;
+                }
+                font-size: 13px;
+                color: inherit;
+              }
+            }
+            .date {
+              text-align: center;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+    .right {
+      h1 {
+        font-size: 20px;
+      }
+      .righ {
+        border-radius: 0;
+
+        background-color: #76767635;
+
+        .athlete {
+          padding: 10px;
+          justify-content: flex-start;
+          img {
+            width: 30px;
+            margin-right: 20px;
+          }
+          .name {
+            a {
+              color: inherit;
+              font-size: 14px;
+              text-transform: capitalize;
+              &:hover {
+                color: red;
+              }
+            }
+            p {
+              font-size: 10px;
+            }
+          }
+        }
+        hr {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

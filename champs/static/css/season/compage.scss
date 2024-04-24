@@ -1,0 +1,69 @@
+.competition-page {
+  .competition-menu {
+    padding: 10px;
+    background-color: rgb(83, 83, 83);
+    h3 {
+      margin: 10px;
+      width: 200px;
+    }
+    .chomp-nav {
+      @media (max-width: 768px) {
+        display: none;
+      }
+      .nav-item {
+        margin: 0 10px;
+      }
+    }
+    .more {
+      display: none;
+      @media (max-width: 768px) {
+        display: inline;
+      }
+    }
+  }
+  .competitiondetails {
+    padding: 20px;
+    @media (max-width: 768px) {
+      padding: 0;
+    }
+    .groups {
+      margin: 20px;
+      list-style: none;
+      @media (max-width: 768px) {
+        margin: 10px;
+      }
+      .group {
+        background-color: #ffffff25;
+        box-shadow: 1px 1px 10px 1px #78787896;
+        border-radius: 10px;
+        h3 {
+          padding: 10px;
+          background-color: rgb(109, 109, 109);
+          color: white;
+        }
+        .teams {
+          padding: 10px;
+          flex-direction: column;
+          // justify-content: flex-start;
+          .team {
+            margin: 10px 0;
+            text-transform: capitalize;
+            a {
+              display: grid;
+              grid-template-columns: 40px 1fr;
+              gap: 10px;
+              font-weight: 600;
+              color: inherit;
+              &:hover {
+                color: red;
+              }
+            }
+          }
+        }
+      }
+
+      .group-fixtures {
+      }
+    }
+  }
+}

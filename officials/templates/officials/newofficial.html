@@ -1,0 +1,99 @@
+{% extends "dashboard/dashboard.html" %} {%load static%}
+<!--title starts-->
+{%block title%}Add Official {% endblock %}
+<!--title ends-->
+{% block content %}
+
+<div class="profile-update">
+  <h1>Add Official</h1>
+  <form action="" method="POST" class="form-ctrl" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title mb-0">First Name</h5>
+            <input
+              type="text"
+              class="form-control"
+              name="fname"
+              placeholder="First name"
+            />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title mb-0">Last Name</h5>
+            <input
+              type="text"
+              class="form-control"
+              name="lname"
+              placeholder="Last Name"
+            />
+          </div>
+          <div class="card-header">
+            <h5 class="card-title mb-0">NIN</h5>
+          </div>
+          <div class="card-body">
+            <input
+              type="text"
+              class="form-control"
+              name="nin"
+              placeholder="NIN"
+            />
+          </div>
+          <div class="card-header">
+            <h5 class="card-title mb-0">Role</h5>
+          </div>
+          <div class="card-body">{{form.role}}</div>
+
+          <div class="card-body">
+            <h5 class="card-title mb-0">Sport</h5>
+            {{form.sport}}
+          </div>
+
+          <div class="card-body">
+            <h5 class="card-title mb-0">Email</h5>
+            <input
+              type="email"
+              class="form-control"
+              name="email"
+              placeholder="Email"
+            />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title mb-0">Phone</h5>
+            <input
+              type="text"
+              class="form-control"
+              name="phone_number"
+              placeholder="Phone number"
+            />
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title mb-0">Gender</h5>
+            {{form.gender}}
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title mb-2">Photo</h5>
+            <input
+              type="file"
+              class="form-control"
+              name="photo"
+              placeholder="Passport photograph"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn-submit">Save official</button>
+  </form>
+</div>
+
+{% endblock %}

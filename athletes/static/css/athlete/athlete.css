@@ -1,0 +1,66 @@
+.athlete-page {
+  width: 100%;
+}
+.athlete-page .top {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 30px;
+}
+@media (max-width: 768px) {
+  .athlete-page .top {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.athlete-page .top .imagery {
+  width: 400px;
+  height: 400px;
+}
+@media (max-width: 468px) {
+  .athlete-page .top .imagery {
+    width: 100%;
+    height: auto;
+  }
+}
+.athlete-page .top .imagery img {
+  width: 100%;
+  padding: 20px;
+}
+.athlete-page .top .details {
+  padding: 20px;
+}
+.athlete-page .top .details h1 {
+  font-size: 1.7em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: rgb(0, 44, 105);
+}
+.athlete-page .top .details h4 {
+  font-size: 15px;
+  color: rgb(87, 87, 87);
+  text-transform: capitalize;
+}
+.athlete-page .top .details .dets {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+@media (max-width: 568px) {
+  .athlete-page .top .details .dets {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.athlete-page .top .details .dets .doets h2 {
+  margin: 10px 0;
+  font-size: 1.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: rgb(0, 44, 105);
+}
+.athlete-page .top .details .dets .doets p {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.athlete-page .top .details .dets .doets p span {
+  font-weight: 400;
+  text-transform: uppercase;
+}/*# sourceMappingURL=athlete.css.map */

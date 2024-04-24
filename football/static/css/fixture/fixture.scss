@@ -1,0 +1,40 @@
+.fixture-page {
+  .fixture-lining{
+    background-color: #e1e1e1;
+    padding: 10px;
+    .fixture-teams{
+      align-items: center;
+      .left{
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        .team1-logo{
+          img{
+            width: 100px;
+          }
+        }
+        h3{
+          text-transform: uppercase;
+          margin: 10px;
+          font-size: 1.2em;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .other-details{
+    flex-direction: column;
+  }
+
+  .controls{
+    width: 40%;
+    margin: 20px auto;
+  }
+  .modal-dialog{
+    background-color: #cecece46;
+    padding: 20px;
+    backdrop-filter: blur(2em);
+  }
+}
+  

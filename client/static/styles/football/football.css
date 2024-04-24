@@ -1,0 +1,93 @@
+.football-page {
+  width: 100%;
+  padding: 10px 5%;
+}
+.football-page .sidebar {
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px 1px #000000;
+  z-index: 90;
+  position: sticky;
+  top: 60px;
+  width: 200px;
+}
+.football-page .sidebar .navbar {
+  justify-content: space-between;
+  flex-direction: column;
+}
+.football-page .sidebar .navbar .logo-brand {
+  padding: 10px;
+  font-size: 12px;
+}
+.football-page .sidebar .navbar hr {
+  height: 25px;
+  border: solid 1.2px #aaa;
+}
+.football-page .sidebar .navbar .navbar-nav {
+  margin-left: 20px;
+  flex-direction: column;
+}
+@media (max-width: 768px) {
+  .football-page .sidebar .navbar .navbar-nav {
+    display: none;
+  }
+}
+.football-page .sidebar .navbar .navbar-nav li {
+  margin: 0 10px;
+  padding: 10px;
+}
+.football-page .sidebar .navbar .navbar-nav li:hover {
+  border-bottom: solid 3px red;
+}
+.football-page .sidebar .navbar .navbar-nav li:hover a {
+  color: red;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+.football-page .sidebar .navbar .navbar-nav li a {
+  color: inherit;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+.football-page .sidebar .navbar .mobile {
+  display: none;
+  position: relative;
+}
+@media (max-width: 768px) {
+  .football-page .sidebar .navbar .mobile {
+    display: block;
+    margin-left: 30px;
+  }
+  .football-page .sidebar .navbar .mobile span,
+  .football-page .sidebar .navbar .mobile i {
+    font-size: 13px;
+    text-transform: capitalize;
+  }
+}
+.football-page .sidebar .navbar .mobile .dronu {
+  padding: 10px;
+  position: absolute;
+  top: 35px;
+  left: 0;
+  width: 150px;
+  border-radius: 0;
+}
+.football-page .sidebar .navbar .mobile .dronu .menobox .menu_links {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.football-page .sidebar .navbar .mobile .dronu .menobox .menu_links .drop-item {
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+}
+.football-page .sidebar .navbar .mobile .dronu .menobox .menu_links .drop-item:hover {
+  background-color: red;
+}
+.football-page .sidebar .navbar .mobile .dronu .menobox .menu_links .drop-item .droplink {
+  color: inherit;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+.football-page .sidebar .navbar .mobile .none {
+  display: none;
+}/*# sourceMappingURL=football.css.map */

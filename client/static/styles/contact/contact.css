@@ -1,0 +1,113 @@
+.contact-page .contact-head {
+  padding: 10% 5%;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.653), rgb(255, 255, 255)), url("https://t3.ftcdn.net/jpg/02/14/23/42/360_F_214234265_cw9c9yW4X04SNhoRyel1Kf9ZTEiqfKz7.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.contact-page .contact-head h2 {
+  font-size: 5em;
+  margin: 20px 0;
+  text-transform: capitalize;
+  color: rgb(0, 0, 0);
+}
+@media (max-width: 868px) {
+  .contact-page .contact-head h2 {
+    font-size: 200%;
+  }
+}
+.contact-page .contact-head h6 {
+  font-weight: 400;
+  font-size: 17px;
+  color: rgb(0, 0, 0);
+  width: 500px;
+}
+@media (max-width: 868px) {
+  .contact-page .contact-head h6 {
+    width: 100%;
+  }
+}
+.contact-page .contacts {
+  padding: 50px 5%;
+  border-radius: 0;
+}
+@media (max-width: 990px) {
+  .contact-page .contacts {
+    padding: 20px;
+  }
+}
+.contact-page .contacts .contacts-faqs {
+  align-items: flex-start;
+}
+@media (max-width: 868px) {
+  .contact-page .contacts .contacts-faqs {
+    flex-direction: column;
+  }
+}
+.contact-page .contacts .contacts-faqs .faqs {
+  padding: 20px;
+  width: 60%;
+}
+@media (max-width: 868px) {
+  .contact-page .contacts .contacts-faqs .faqs {
+    width: 100%;
+  }
+}
+.contact-page .contacts .contacts-faqs .faqs .accordion .accordion-item {
+  margin-bottom: 10px;
+}
+.contact-page .contacts .contacts-faqs .faqs .accordion .accordion-item .accordion-header {
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  justify-content: flex-start;
+}
+.contact-page .contacts .contacts-faqs .faqs .accordion .accordion-item .accordion-header i {
+  margin-right: 20px;
+  font-size: 20px;
+  padding: 5px;
+}
+.contact-page .contacts .contacts-faqs .faqs .accordion .accordion-item .accordion-header:hover {
+  color: red;
+}
+.contact-page .contacts .contacts-faqs .faqs .accordion .accordion-item .accordion-content {
+  display: none;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.3450980392);
+}
+.contact-page .contacts .contacts-faqs .conts {
+  padding: 20px;
+  width: 38%;
+}
+@media (max-width: 868px) {
+  .contact-page .contacts .contacts-faqs .conts {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+.contact-page .contacts .contacts-faqs .conts .contact {
+  padding: 20px;
+  background-color: rgba(148, 148, 148, 0.2078431373);
+  margin: 10px 0;
+}
+.contact-page .contacts .contacts-faqs .conts .contact h1 {
+  font-weight: 500;
+  text-transform: capitalize;
+  font-size: 28px;
+}
+.contact-page .contacts .contacts-faqs .conts .contact p {
+  margin: 10px 0;
+  font-size: 14px;
+}
+.contact-page .contacts .contacts-faqs .conts .contact .contact_list {
+  margin: 10px 0;
+}
+.contact-page .contacts .contacts-faqs .conts .contact .contact_list .contact_item {
+  margin: 10px 0;
+  justify-content: flex-start;
+  color: rgb(135, 3, 3);
+}
+.contact-page .contacts .contacts-faqs .conts .contact .contact_list .contact_item i {
+  margin-right: 20px;
+  font-size: 20px;
+}/*# sourceMappingURL=contact.css.map */

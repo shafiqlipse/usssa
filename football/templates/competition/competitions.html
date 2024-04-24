@@ -1,0 +1,89 @@
+{% extends "dashboard/dashboard.html" %}
+
+<!--static-->
+{% block title %}Competitions{% endblock %}
+<!--static-->
+{% load static %}
+<!--khfufufu-->
+{% block content %}
+<div class="officials-page glue">
+  <div class="off flex">
+    <h1>competitions</h1>
+    <a href="{% url 'create_season'%}" class="btn-submit">Add competition</a>
+  </div>
+  <div class="officiallist">
+    <div class="filter">
+      <form action="" method="get" class="formis grid6">
+        <div class="field flex">
+          <label>{{myFilter.form.name.label}}</label>
+          {{myFilter.form.name}}
+        </div>
+        <div class="field flex">
+          <label>{{myFilter.form.sport.label}}</label>
+          {{myFilter.form.sport}}
+        </div>
+        <div class="field flex">
+          <label>{{myFilter.form.age.label}}</label>
+          {{myFilter.form.age}}
+        </div>
+        <div class="field flex">
+          <label>{{myFilter.form.gender.label}}</label>
+          {{myFilter.form.gender}}
+        </div>
+        <div class="field flex">
+          <label>type</label>
+          {{myFilter.form.comtype}}
+        </div>
+        <!-- <div class="field flex">
+          <label>category</label>
+          {{myFilter.form.comcat}}
+        </div> -->
+        <button type="submit" class="btn-submit">filter</button>
+      </form>
+    </div>
+    <div class="titles grid6">
+      <span>name</span>
+      <span>age</span>
+      <span>sport</span>
+      <span>gender</span>
+      <span>type</span>
+      <span>category</span>
+    </div>
+
+    <div class="official-list">
+      {% for competition in competitionlist%}
+      <div class="officiall grid6">
+        <a href="{% url 'competition' competition.id%}">
+          <span>{{competition.name}} </span> </a
+        ><span>{{competition.age}}</span>
+        <span>{{competition.sport}} </span>
+        <span>{{competition.gender}}</span>
+        <span>{{competition.comtype}}</span>
+        <span>{{competition.comcat}}</span>
+      </div>
+      <hr />
+      {%endfor%}
+    </div>
+    <div class="pagination">
+      <span class="step-links">
+        {% if competitionlist.has_previous %}
+        <a href="?page=1">&laquo; first</a>
+        <a href="?page={{ competitionlist.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+          Page {{competitionlist.number }} of
+          {{competitionlist.paginator.num_pages}}
+        </span>
+
+        {% if officiallist.has_next %}
+        <a href="?page={{ competitionlist.next_page_number }}">next</a>
+        <a href="?page={{ competitionlist.paginator.num_pages }}"
+          >last &raquo;</a
+        >
+        {% endif %}
+      </span>
+    </div>
+  </div>
+</div>
+{% endblock %}

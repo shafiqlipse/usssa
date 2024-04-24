@@ -1,0 +1,85 @@
+{% extends "main/Base.html" %} {%load static%}
+<!--  -->
+{%block title%}{{ fixture.team1 }} vs {{ fixture.team2}} {% endblock %}
+<!--  -->
+
+{%block content%}
+<div class="fixture-detail">
+  <div class="quick-details">
+    <h1>{{ fixture.season }} - {{ fixture.competition}}</h1>
+  </div>
+
+  <hr />
+  <!-- Display fixture details -->
+  <div class="fixt flex">
+    <div class="team-side flex">
+      <img src="{{ fixture.team1.school.school_profile.badge.url }} " alt="" />
+      <p>{{ fixture.team1}}</p>
+    </div>
+    <div class="mid-time">
+      <h3>{{fixture.date|date:"H:i"}}</h3>
+      <h3>{{fixture.date|date}}</h3>
+      
+    </div>
+    <div class="team-side flex">
+      <p>{{ fixture.team2}}</p>
+      <img src="{{ fixture.team2.school.school_profile.badge.url }} " alt="" />
+    </div>
+  </div>
+
+  <button class="popper" id="popper" onclick="Popup()">Add official</button>
+<div class="official-form flex">
+  <form
+    method="post"
+    action="{% url 'footballstatistics' id=fixture.id %}"
+    class="match_official_form glue"
+  >
+    {% csrf_token %}  <h2>Add Match Official</h2> {{ match_official_form.as_p }}
+    <div class="btns grid2">
+    <button type="submit" name="match_official_submit">
+      Add Match Official
+    </button><button class="popper" id="poper" onclick="Popup()">Cancel</button></div>
+  </form>
+</div>
+
+  <h2>Add Match Event</h2>
+<!-- your template -->
+<form
+method="post"
+action="{% url 'footballstatistics' id=fixture.id %}"
+>
+{% csrf_token %} {{ match_event_form.as_p }}
+<button type="submit" name="match_event_submit">Add Match Event</button>
+</form>
+
+  <!--  -->
+  {% if match_events %}
+  <h2>Match Events</h2>
+  <ul>
+    {% for event in match_events %}
+    <li>{{ event.event_type }} - {{ event.athlete }}- {{ event.minute }}</li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% endif %}
+  {% if match_events %}
+  <h2>Match commentary</h2>
+  <ul>
+    {% for event in match_events %}
+    <li>{{ event.minute }}' - {{ event.commentary }}</li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% endif %}
+<!-- Assuming you are working within a Django template (e.g., match_event_list.html) -->
+
+
+<script>
+  $(document).ready(function() {
+      // Apply Select2 to your form field
+      $('#id_your_foreign_key_field').select2();
+  });
+</script>
+{%endblock%}

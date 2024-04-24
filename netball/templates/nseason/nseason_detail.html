@@ -1,0 +1,80 @@
+{% extends "dashboard/dashboard.html" %}
+<!--  -->
+{%load static%}
+<!--  -->
+{%block title%} {{nseason.competition}} {{nseason.name}}
+<!--  -->
+{% endblock %}
+<!--  -->
+{%block content%}
+<!--  -->
+{{nseason.competition}} {{nseason.name}} {{nseason.groups}} {{nseason.participants}}
+
+<form action="" method="post">
+  {% csrf_token %} {{ formset.as_p }}
+  <button class="btn-submit">save groups</button>
+</form>
+
+<div class="groups">
+  {% for group in groups %} {{ group.name }}
+  <ul>
+    {% for team in group.teams.all %}
+    <li>{{ team.name }}</li>
+    {% endfor %}
+  </ul>
+  {% endfor %}
+</div>
+
+<!-- season_detail.html -->
+
+<h1>{{ nseason.name }}</h1>
+<!-- Display other nseason details -->
+
+<form
+  id="generatenFixturesForm"
+  action="{% url 'generate_nfixtures' nseason.id %}"
+  method="post"
+>
+  {% csrf_token %}
+  <button type="button" id="generatenFixturesButton" class="btn-submit">
+    Generate Fixtures
+  </button>
+  <div class="fixtures">
+    {%for fixture in fixtures%}
+    <div class="fixture grid3">
+      <span>{{fixture.team1}}</span>
+      <span
+        ><a href="{% url 'editfixture' fixture.id%}">{{fixture.date}}</a>
+      </span>
+      <span>{{fixture.team2}}</span>
+    </div>
+    {%empty%}
+    <p>No Fixtures yet</p>
+    {% endfor%}
+  </div>
+</form>
+
+<script>
+  document
+    .getElementById("generatenFixturesButton")
+    .addEventListener("click", function () {
+      var form = document.getElementById("generatenFixturesForm");
+      var formData = new FormData(form);
+
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", form.action, true);
+      xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+      xhr.onload = function () {
+        var response = JSON.parse(xhr.responseText);
+        if (response.success) {
+          alert("Netball Fixtures generated successfully");
+          // Add additional logic to update the UI if needed
+        } else {
+          alert("Error: " + response.message);
+        }
+      };
+      xhr.send(formData);
+    });
+</script>
+
+{%endblock%}

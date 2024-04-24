@@ -1,0 +1,17 @@
+.competition {
+  padding: 20px;
+}
+.competition .competitions .left h3 {
+  font-size: 20px;
+  margin: 10px 0;
+  text-transform: uppercase;
+}
+.competition .competitions .left .seasons {
+  list-style: none;
+}
+.competition .competitions .left .seasons .season a {
+  margin: 10px 0;
+  text-transform: capitalize;
+  font-size: 18px;
+  color: inherit;
+}/*# sourceMappingURL=comp.css.map */

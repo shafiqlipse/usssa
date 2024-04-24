@@ -1,0 +1,72 @@
+{% extends "main/Base.html" %} {%load static%}
+<!---->
+
+<title>{% block title %} {% endblock title %} | USSSA</title>
+
+<!---->
+{% block content %}
+<div class="new-school">
+  <div class="school-long">
+    <form
+      action=""
+      method="POST"
+      class="form-control"
+      enctype="multipart/form-data"
+    >
+      {% csrf_token %} {{form.as_p}}
+      <button type="submit" class="btn-submit">submit</button>
+      <div class="field">
+        <label for="region">Region:</label>
+        <select
+          id="id_region"
+          name="region"
+          onchange="get_zones()"
+          class="form-control"
+        >
+          <option value="" selected disabled>Select a region</option>
+          {% for region in regions %}
+          <option value="{{ region.id }}">{{ region.name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="field">
+        <label for="zone">Zone:</label>
+        <select id="id_zone" class="form-control">
+          <option disabled selected>Select a region first</option>
+        </select>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  function get_zones() {
+    var region_select = document.getElementById("id_region");
+    var zone_select = document.getElementById("id_zone");
+
+    // Show a loading indicator for zones
+    zone_select.innerHTML =
+      "<option disabled selected>Loading zones...</option>";
+
+    // Fetch zones for the selected region using AJAX
+    var region_id = region_select.value;
+    fetch(`/get_zones/?region_id=${region_id}`)
+      .then((response) => response.json())
+      .then((data) => {
+        // Hide the loading indicator
+        zone_select.innerHTML = "";
+
+        // Update the 'zone' dropdown with the fetched data
+        data.forEach((zone) => {
+          var option = document.createElement("option");
+          option.value = zone.id;
+          option.text = zone.name;
+          zone_select.add(option);
+        });
+      })
+      .catch((error) => console.error("Error:", error));
+  }
+</script>
+
+<script src="{% static 'scripts/app.js'%}"></script>
+{% endblock %}

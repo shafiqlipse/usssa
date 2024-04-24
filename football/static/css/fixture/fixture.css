@@ -1,0 +1,34 @@
+.fixture-page .fixture-lining {
+  background-color: #e1e1e1;
+  padding: 10px;
+}
+.fixture-page .fixture-lining .fixture-teams {
+  align-items: center;
+}
+.fixture-page .fixture-lining .fixture-teams .left {
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+.fixture-page .fixture-lining .fixture-teams .left .team1-logo img {
+  width: 100px;
+}
+.fixture-page .fixture-lining .fixture-teams .left h3 {
+  text-transform: uppercase;
+  margin: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.fixture-page .other-details {
+  flex-direction: column;
+}
+.fixture-page .controls {
+  width: 40%;
+  margin: 20px auto;
+}
+.fixture-page .modal-dialog {
+  background-color: rgba(206, 206, 206, 0.2745098039);
+  padding: 20px;
+  -webkit-backdrop-filter: blur(2em);
+          backdrop-filter: blur(2em);
+}/*# sourceMappingURL=fixture.css.map */

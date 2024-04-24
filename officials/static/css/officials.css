@@ -1,0 +1,22 @@
+.officials-page h1 {
+  font-size: 19px;
+  font-weight: bold;
+}
+.officials-page .officiallist table thead tr th {
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: rgb(46, 46, 46);
+  color: white;
+}
+.officials-page .officiallist table thead tr th:first-child {
+  text-align: left;
+}
+.officials-page .officiallist table tbody tr td {
+  align-items: start;
+}
+.officials-page .officiallist table tbody tr td img {
+  width: 50px;
+}
+.officials-page .officiallist table tbody tr td:first-child {
+  text-align: left;
+}/*# sourceMappingURL=officials.css.map */

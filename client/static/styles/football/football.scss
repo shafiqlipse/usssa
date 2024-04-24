@@ -1,0 +1,92 @@
+.football-page {
+  width: 100%;
+  padding:10px 5%;
+  .sidebar {
+    border-radius:10px;
+    box-shadow: 1px 1px 10px 1px #000000;
+    z-index: 90;
+    position: sticky;
+    top: 60px;
+    width: 200px;
+    .navbar {
+      justify-content: space-between;
+      flex-direction: column;
+      .logo-brand {
+        padding: 10px;
+        font-size: 12px;
+        // border-right: #a9a8a8 2px solid;
+      }
+      hr {
+        height: 25px;
+        border: solid 1.2px #aaa;
+      }
+      .navbar-nav {
+        margin-left: 20px;
+        flex-direction: column;
+        @media (max-width: 768px) {
+          display: none;
+        }
+        li {
+          margin: 0 10px;
+          padding: 10px;
+          &:hover {
+            border-bottom: solid 3px red;
+            a {
+              color: red;
+              font-size: 14px;
+              text-transform: capitalize;
+            }
+          }
+          a {
+            color: inherit;
+            font-size: 14px;
+            text-transform: capitalize;
+          }
+        }
+      }
+      .mobile {
+        display: none;
+        position: relative;
+        @media (max-width: 768px) {
+          display: block;
+          margin-left: 30px;
+          span,
+          i {
+            font-size: 13px;
+            text-transform: capitalize;
+          }
+        }
+        .dronu {
+          padding: 10px;
+          position: absolute;
+          top: 35px;
+          left: 0;
+          width: 150px;
+          border-radius: 0;
+          .menobox {
+            .menu_links {
+              flex-direction: column;
+              align-items: flex-start;
+              .drop-item {
+                padding: 10px;
+                width: 100%;
+                border-radius: 5px;
+                &:hover {
+                  background-color: red;
+                }
+                .droplink {
+                  color: inherit;
+                  font-size: 14px;
+                  text-transform: capitalize;
+                }
+              }
+            }
+          }
+        }
+        .none {
+          display: none;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,119 @@
+{% extends 'main/Base.html' %}
+
+<!--static-->
+{% comment %} {% load for %} {% load if %} {% endcomment %}
+
+<!--static-->
+{% load static %}
+<!--khfufufu-->
+{% block content %}
+<div class="school-page">
+  <div class="bg-cover"></div>
+  <div class="profile-page">
+
+    <div class="profile-head flex">
+      <div class="profile-image">
+        {% if profile.badge %}
+        <img src="{{ profile.badge.url}}" alt="" />
+        {% else %}
+        <img src="{% static 'images/profile.png'%}" alt="" />
+        {% endif %}
+      </div>
+      <div class="profile-details">
+        <h2>{{profile.school_name}}</h2>
+        Emis:{{profile.EMIS}}
+      </div>
+    </div>
+
+    <div class="details grid2">
+      <div class="profile-tabs">
+        <div class="tabs-section flex">
+          <div class="tabs-container">
+            <div class="tabs">
+              <button class="tab" aria-selected="true" id="js">Students</button>
+              <button class="tab" aria-selected="false" id="ruby">Teams</button>
+              <button class="tab" aria-selected="false" id="php">
+                Officials
+              </button>
+            </div>
+            <div class="content">
+              <div class="tabpanel glue" aria-labelledby="js">
+                <div class="athletelist">
+                  <div class="filter">
+                    <form action="" method="get" class="formis grid5">
+                      {{athletesFilter.form.as_p}}
+                      <button type="submit" class="btn-submit">filter</button>
+                    </form>
+                  </div>
+                  <div class="titles grid6">
+                    <span>Photo</span>
+                    <span>name</span>
+                    <span>sport</span>
+                    <span>lin</span>
+                    <span>gender</span>
+                    <span>age</span>
+                  </div>
+                  <div class="athlete-list">
+                    {% for athlete in athleteslist%}
+                    <div class="athletel grid6">
+                      <img src="{{athlete.photo.url}}" alt="" />
+                      <a href="{%url 'athlete' athlete.id%}"
+                        ><span>{{athlete.name}} </span>
+                      </a>
+                      <span>{{athlete.sport}} </span>
+                      <span>{{athlete.lin}} </span>
+                      <span>{{athlete.gender}}</span>
+                      <span>{{athlete.age}}</span>
+                    </div>
+                    <hr />
+                    {%endfor%}
+                  </div>
+                </div>
+              </div>
+              <div class="tabpanel glue" aria-labelledby="ruby" hidden>
+                <div class="teamlist">
+                  <div class="filter">
+                    <form action="" method="get" class="formis grid5">
+                      {{teamsFilter.form.as_p}}
+                      <button type="submit">filter</button>
+                    </form>
+                  </div>
+                  <div class="titles grid5">
+                    <span>name</span>
+                    <span>sport</span>
+                    <span>gender</span>
+                    <span>age</span>
+                    <span>Delete</span>
+                  </div>
+                  <div class="team-list">
+                    {% for team in teamlist%}
+                    <div class="teaml grid5">
+                      <a href="{%url 'updateteam' team.id%}"
+                        ><span>{{team.name}} </span>
+                      </a>
+                      <span>{{team.sport}} </span>
+                      <span>{{team.gender}}</span>
+                      <span>{{team.age}}</span>
+
+                      <a class="btne flex" href="{%url 'deleteteam' team.id%}"
+                        ><i class="fa fa-trash"></i
+                      ></a>
+                    </div>
+                    <hr />
+                    {%endfor%}
+                  </div>
+                </div>
+              </div>
+              <div class="tabpanel glue" aria-labelledby="php" hidden>PHP</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="school-details glue">
+       
+      </div>
+    </div>
+    
+  </div>
+</div>
+{% endblock %}

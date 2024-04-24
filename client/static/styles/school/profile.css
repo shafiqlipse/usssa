@@ -1,0 +1,78 @@
+.school-page {
+  width: 100%;
+}
+.school-page .bg-cover {
+  height: 200px;
+  background-image: url(../../images/derty.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.school-page .profile-page {
+  padding: 10px 5%;
+}
+.school-page .profile-page .profile-head {
+  margin-top: -100px;
+}
+.school-page .profile-page .profile-head .profile-image {
+  width: 200px;
+  padding: 10px;
+  background-color: #ff0000;
+}
+.school-page .profile-page .profile-head .profile-image img {
+  width: 100%;
+}
+.school-page .profile-page .profile-head .profile-details {
+  width: 100%;
+}
+.school-page .profile-page .profile-head .profile-details h2 {
+  font-size: 2em;
+  width: 100%;
+  color: #fff;
+  text-transform: capitalize;
+  padding: 20px;
+  background-color: rgba(6, 61, 96, 0.6039215686);
+  -webkit-backdrop-filter: blur(0.2em);
+          backdrop-filter: blur(0.2em);
+}
+.school-page .profile-page .details {
+  grid-template-columns: 1fr, 350px !important;
+}
+.school-page .profile-page .details .profile-tabs .tabs-section .tabs-container .tabs {
+  margin-bottom: 40px;
+}
+.school-page .profile-page .details .profile-tabs .tabs-section .tabs-container .tabs .tab {
+  padding: 10px 20px;
+  font-weight: bold;
+}
+.school-page .profile-page .details .profile-tabs .tabs-section .tabs-container .content .tabpanel {
+  padding: 10px;
+}
+.school-page .profile-page .details .profile-tabs .tabs-section .tabs-container .content .tabpanel .athletelist .filter {
+  padding: 0;
+  margin: 10px 0;
+}
+.school-page .profile-page .details .profile-tabs .tabs-section .tabs-container .content .tabpanel .athletelist .filter .formis {
+  align-items: center;
+}
+.school-page .profile-page .details .profile-tabs .tabs-section .tabs-container .content .tabpanel .athletelist .filter .formis p {
+  margin: 0;
+}
+.school-page .profile-page .details .profile-tabs .tabs-section .tabs-container .content .tabpanel .athletelist .titles {
+  background-color: rgb(70, 70, 70);
+  color: white;
+  padding: 10px;
+}
+.school-page .profile-page .details .profile-tabs .tabs-section .tabs-container .content .tabpanel .athletelist .athlete-list {
+  margin: 10px 0;
+}
+.school-page .profile-page .details .profile-tabs .tabs-section .tabs-container .content .tabpanel .athletelist .athlete-list .athletel {
+  align-items: center;
+  padding: 0 10px;
+}
+.school-page .profile-page .details .profile-tabs .tabs-section .tabs-container .content .tabpanel .athletelist .athlete-list .athletel img {
+  width: 35px;
+}
+.school-page .profile-page .details .school-details {
+  padding: 10px;
+}/*# sourceMappingURL=profile.css.map */

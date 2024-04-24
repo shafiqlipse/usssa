@@ -1,0 +1,57 @@
+.football-teams {
+  padding: 20px 5%;
+  width: 100%;
+  grid-template-columns: 1fr 350px;
+  .teams {
+    padding: 20px;
+
+    h1 {
+      margin: 20px 0;
+      font-weight: 600;
+      font-size: 1.5em;
+    }
+    .teams-grid {
+      .team {
+        padding: 10px;
+        .team-logo {
+          width: 80px;
+          img {
+            width: 100%;
+          }
+        }
+        .team-text {
+          h2 {
+            a {
+              font-size: 14px;
+              font-weight: 500;
+              text-transform: uppercase;
+              color: inherit;
+              &:hover{
+                color: red;
+              }
+            }
+          }
+          p {
+            a {
+              text-transform: capitalize;
+              font-size: 13px;
+              color: inherit;
+              &:hover{
+                color: red;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .teams-news {
+    // padding: 20px;
+    p {
+      padding: 20px;
+      border-left: 2px solid red;
+      margin: 10px;
+      background-color: #cccccc35;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+.competition-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.competition-page .competition {
+  width: 70%;
+}
+.competition-page .competition h1 {
+  margin: 20px;
+  text-transform: uppercase;
+  font-size: 2em;
+  font-weight: bold;
+}
+.competition-page .competition .form-ctrl {
+  color: #142265;
+}
+.competition-page .competition .form-ctrl .fields {
+  background-color: rgba(110, 111, 103, 0.2078431373);
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.6784313725);
+  padding: 30px;
+  border-radius: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.competition-page .competition .form-ctrl .fields .icon {
+  width: 100px;
+  font-size: 3em;
+}
+.competition-page .competition .form-ctrl .fields .leftion {
+  width: 100%;
+  padding: 0 10px;
+}
+.competition-page .competition .form-ctrl .fields .leftion h1 {
+  text-transform: capitalize;
+  margin: 0;
+  font-weight: bold;
+  font-size: 2em;
+}
+.competition-page .competition .form-ctrl .fields .leftion .field {
+  margin: 10px 0;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.competition-page .competition .form-ctrl .fields .leftion .field label {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 15px;
+}
+.competition-page .competition .form-ctrl .fields .leftion .field label span {
+  font-size: 12px;
+  color: #ccc;
+  margin: 10px 0;
+}
+.competition-page .competition .form-ctrl .fields .leftion .field input, .competition-page .competition .form-ctrl .fields .leftion .field select {
+  padding: 10px;
+  margin: 10px 0;
+  border: solid 1px rgba(204, 203, 203, 0.3803921569);
+  border-radius: 5px;
+  width: 100%;
+  color: inherit;
+  font-size: 16px;
+}/*# sourceMappingURL=create.css.map */

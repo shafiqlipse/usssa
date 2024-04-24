@@ -1,0 +1,20 @@
+.new-school {
+  padding: 20px 10%;
+  background-color: #e1e1e1;
+}
+.new-school .school-long .form-control {
+  background-color: #fff;
+  box-shadow: 1px 1px 10px 1px #e2e1e2;
+  padding: 20px;
+  border-radius: 5px;
+}
+.new-school .school-long .form-control .row {
+  width: 100%;
+}
+.new-school .school-long .form-control .row .col .field-img img {
+  width: 200px;
+  background-color: #fff;
+  height: 200px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}/*# sourceMappingURL=school_new.css.map */

@@ -1,0 +1,43 @@
+{% extends "dashboard/dashboard.html" %} {%load static%}
+<!--title starts-->
+{%block title%}{{athlete.name}} {% endblock %}
+<!--title ends-->
+{% block content %}
+
+<div class="athlete-page">
+  <div class="top">
+    <div class="imagery">
+      <img src="{{athlete.photo.url}}" alt="" />
+    </div>
+    <div class="details">
+      <h1>{{athlete.name}}</h1>
+      <h4>{{athlete.school}}</h4>
+      <hr />
+      <div class="dets">
+        <div class="doets">
+          <h2>athlete's Info</h2>
+          <hr>
+          <p><span>LIN: </span>{{athlete.lin}}</p>
+          <p><span>SPORT: </span>{{athlete.sport}}</p>
+          <p><span>GEnder: </span>{{athlete.gender}}</p>
+          <p><span>Age: </span>{{athlete.age}}</p>
+          <p><span>Date of birth: </span>{{athlete.date_of_birth}}</p>
+        </div>
+        <div class="doets">
+          <h2>Parent/Guardian Info</h2>
+          <hr>
+          <p><span>Names: </span>{{athlete.Parent_fname}} {{athlete.Parent_lname}}</p>
+          <p><span>NIN: </span>{{athlete.parent_nin}}</p>
+          <p><span>SPORT: </span>{{athlete.parent_email}}</p>
+          <p><span>contact: </span>{{athlete.parent_phone_number}}</p>
+          <p><span>gender: </span>{{athlete.parent_gender}}</p>
+          <p><span>relationship: </span>{{athlete.relationship}}</p>
+          <p><span>address: </span>{{athlete.address}}</p>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

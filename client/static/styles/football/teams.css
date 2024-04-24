@@ -1,0 +1,45 @@
+.football-teams {
+  padding: 20px 5%;
+  width: 100%;
+  grid-template-columns: 1fr 350px;
+}
+.football-teams .teams {
+  padding: 20px;
+}
+.football-teams .teams h1 {
+  margin: 20px 0;
+  font-weight: 600;
+  font-size: 1.5em;
+}
+.football-teams .teams .teams-grid .team {
+  padding: 10px;
+}
+.football-teams .teams .teams-grid .team .team-logo {
+  width: 80px;
+}
+.football-teams .teams .teams-grid .team .team-logo img {
+  width: 100%;
+}
+.football-teams .teams .teams-grid .team .team-text h2 a {
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: inherit;
+}
+.football-teams .teams .teams-grid .team .team-text h2 a:hover {
+  color: red;
+}
+.football-teams .teams .teams-grid .team .team-text p a {
+  text-transform: capitalize;
+  font-size: 13px;
+  color: inherit;
+}
+.football-teams .teams .teams-grid .team .team-text p a:hover {
+  color: red;
+}
+.football-teams .teams-news p {
+  padding: 20px;
+  border-left: 2px solid red;
+  margin: 10px;
+  background-color: rgba(204, 204, 204, 0.2078431373);
+}/*# sourceMappingURL=teams.css.map */

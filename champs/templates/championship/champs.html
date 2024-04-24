@@ -1,0 +1,34 @@
+{% extends "dashboard/dashboard.html" %}
+
+<!--static-->
+{% block title %}Championships{% endblock %}
+<!--static-->
+{% load static %}
+<!--khfufufu-->
+{% block content %}
+<div class="champs-page">
+  <div class="flex">
+    <h1>Championships</h1>
+    <a href="{% url 'newchamp'%}" class="btn-submit">Add Championship</a>
+  </div>
+  <div class="championships grid2">
+    {% for champ in champs %}
+    <div class="champ-card flex">
+      <a href="{%url 'champ' champ.id%}" class="card-thumb">
+        {% if champ.thumbnail %}
+        <img src="{{champ.thumbnail.url}}" alt="" />{% else %}
+        <img src="{% static 'images/profile.png'%}" alt="" />
+        {% endif %}
+      </a>
+      <div class="card-words flex">
+        <h3>{{champ.name}}</h3>
+        <div class="control-card flex">
+          <a href="">edit</a><a href="{%url 'deletechamp' champ.id%}">trash</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

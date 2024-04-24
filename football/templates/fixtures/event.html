@@ -1,0 +1,67 @@
+<div
+class="modal fade"
+id="addEventModal"
+tabindex="-1"
+aria-labelledby="addEventModalLabel"
+aria-hidden="true"
+>
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="addEventModalLabel">Add Event</h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="modal-body">
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <!-- Display form fields -->
+        {{ eform.non_field_errors }}
+        <div class="mb-3">
+          <label
+            for="{{ eform.event_type.id_for_label }}"
+            class="form-label"
+            >Event Type</label
+          >
+          {{ eform.event_type }}
+        </div>
+        <div class="mb-3">
+          <label for="{{ eform.team.id_for_label }}" class="form-label"
+            >Team</label
+          >
+          {{ eform.team }}
+        </div>
+        <div class="mb-3">
+          <label for="{{ eform.athlete.id_for_label }}" class="form-label"
+            >Athlete</label
+          >
+          {{ eform.athlete }}
+        </div>
+        
+        <div class="mb-3">
+          <label
+            for="{{ eform.minute.id_for_label }}"
+            class="form-label"
+            >Minute</label
+          >
+          {{ eform.minute }}
+        </div>
+        <div class="mb-3">
+          <label
+            for="{{ eform.commentary.id_for_label }}"
+            class="form-label"
+            >Comment</label
+          >
+          {{ eform.commentary }}
+        </div>
+        <!-- Add more fields as needed -->
+        <button type="submit" class="btn btn-primary">Add Event</button>
+      </form>
+    </div>
+  </div>
+</div>
+</div>

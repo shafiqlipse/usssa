@@ -1,0 +1,65 @@
+{% extends "dashboard/school_dashboard.html" %} {%load static%}
+<!--title starts-->
+{%block title%}Profile-update {% endblock %}
+<!--title ends-->
+{% block content %}
+
+<div class="profile-update glue">
+  <form action="" method="POST" class="form-ctrl" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="fields flex">
+      <div class="left">
+        <div class="field">
+          <label>{{form.photo.label}} </label>{% if form.instance.photo %}
+          <img
+            src="{{ form.instance.photo.url }}"
+            id="image-preview"
+            alt="Current Photo"
+          />
+          {% else %}
+
+          <img
+            src="{% static 'images/profile.png'%}"
+            id="image-preview"
+            alt="No Photo"
+          />
+          {% endif %}
+        </div>
+        <div class="field">
+          <input
+            type="file"
+            name="photo"
+            accept="image/*"
+            onchange="displayImage(this);"
+            id="id_photo"
+          />
+        </div>
+
+        <div class="field flex">
+          <label>{{ form.email.label}}</label> {{form.email}}
+        </div>
+        <div class="field flex">
+          <label>{{ form.gender.label}}</label> {{form.gender}}
+        </div>
+    
+      </div>
+      <div class="other-fields">
+        <div class="field flex">
+          <label>{{ form.name.label}}</label> {{form.name}}
+        </div>
+        <div class="field flex">
+          <label>{{ form.nin.label}} </label>{{form.nin}}
+        </div>
+        <div class="field flex">
+          <label>{{ form.bio.label}}</label> {{form.bio}}
+        </div>
+        <div class="field flex">
+          <label>{{ form.phone.label}} </label>{{form.phone}}
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn-submit">Save Head teacher</button>
+  </form>
+</div>
+
+{% endblock %}

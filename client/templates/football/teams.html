@@ -1,0 +1,32 @@
+{% extends 'football/football.html'%}
+<!--  -->
+{%block title%}Football Teams {%endblock%}
+<!--  -->
+{%block football_content%}
+<div class="football-teams grid2">
+  <div class="teams glue">
+    <h1>Football Teams</h1>
+    <div class="teams-grid grid3">
+      {%for team in teams%}
+      <div class="team flex">
+        <div class="team-logo">
+          <img src="{{team.school.school_profile.badge.url}}" alt="" />
+        </div>
+        <div class="team-text">
+          <h2>
+            <a href="{% url 'schoolprofile' team.school.school_profile.id%}"
+              >{{team.school.school.school_name}}</a
+            >
+          </h2>
+          <p><a href="{% url 'team' team.id %}">{{team.name}}</a></p>
+        </div>
+      </div>
+      {%endfor%}
+    </div>
+  </div>
+  <div class="teams-news glue">
+    <p>No news to show</p>
+  </div>
+</div>
+
+{%endblock%}

@@ -1,0 +1,219 @@
+<html lang="en">
+  <!--load static-->
+  {% load static%}
+  <!--load static-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %} {% endblock title %} | USSSA</title>
+    <link rel="icon" href="{%static 'images/logo.png'%}" sizes="35x35" />
+
+    <link rel="stylesheet" href="{% static 'css/css/all.min.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/profile/school_new.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/main/main.css'%}" />
+  </head>
+  <body>
+    <div class="registeration_page">
+      <div class="school-container flex">
+        <div class="left-section flex">
+          <div class="logo-box">
+            <img
+              src="{% static 'images/logo.png'%}"
+              alt="USSSA LOGO"
+              class="usssa-logo"
+            />
+          </div>
+          <div class="yht flex">
+            <h4>UGANDA SECONDARY SCHOOLS SPORTS ASSOCIATION</h4>
+            <h1>welcome!</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt,
+              incidunt.
+            </p>
+          </div>
+          <div class="login flex">
+            <span>Already have a school account!</span>
+            <div class="btns">
+              <button class="btn-corner-rounded">login</button>
+              <button class="btn-corner-rounded">home</button>
+            </div>
+          </div>
+        </div>
+        <div class="form-section">
+          <h1>Register School</h1>
+          <form
+            action=""
+            method="POST"
+            class="form-ctrl"
+            enctype="multipart/form-data"
+          >
+            {% csrf_token %}
+            <div class="form-flex flex">
+              <fieldset class="left flex">
+                <legend>school info</legend>
+
+                <div class="fields">
+                  <div class="field">
+                    <label>{{form.badge.label}} </label>
+                    {% if form.instance.badge %}
+                    <img
+                      src="{{ form.instance.badge.url }}"
+                      id="image-preview"
+                      alt="School badge"
+                    />
+                    {% else %}
+
+                    <img
+                      src="{% static 'images/profile.png'%}"
+                      id="image-preview"
+                      alt="No Photo"
+                    />
+                    {% endif %}
+                  </div>
+                  <div class="field">
+                    <input
+                      type="file"
+                      name="badge"
+                      accept="image/*"
+                      onchange="displayImage(this);"
+                      id="id_badge"
+                    />
+                  </div>
+                </div>
+                <div class="fieldsx">
+                  <div class="field-flex grid2">
+                    <div class="field">
+                      <label for="">{{form.school_name.label}}</label>
+                      {{form.school_name}}
+                    </div>
+                    <div class="field">
+                      <label for="">{{form.EMIS.label}}</label>
+                      {{form.EMIS}}
+                    </div>
+                  </div>
+                  <div class="field-flex grid2">
+                    <div class="field-flex">
+                      <div class="field">
+                        <label for="">{{form.region.label}}</label>
+                        {{form.region}}
+                      </div>
+                      <div class="field">
+                        <label for="">{{form.district.label}}</label>
+                        {{form.district}}
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label for="">{{form.zone.label}}</label>
+                      {{form.zone}}
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset class="left flex">
+                <legend>head teacher info</legend>
+
+                <div class="fields">
+                  <div class="field">
+                    <label>{{form.photo.label}} </label>
+                    {% if form.instance.photo %}
+                    <img
+                      src="{{ form.instance.photo.url }}"
+                      id="wimage-preview"
+                      alt="Current Photo"
+                    />
+                    {% else %}
+
+                    <img
+                      src="{% static 'images/profile.png'%}"
+                      id="wimage-preview"
+                      alt="No Photo"
+                    />
+                    {% endif %}
+                  </div>
+                  <div class="field">
+                    <input
+                      type="file"
+                      name="photo"
+                      accept="image/*"
+                      onchange="displayfImage(this);"
+                      id="id_photo"
+                    />
+                  </div>
+                </div>
+                <div class="fieldsx">
+                  <div class="field-flex grid2">
+                    <div class="field">
+                      <label for="">{{form.fname.label}}</label>
+                      {{form.fname}}
+                    </div>
+                    <div class="field">
+                      <label for="">{{form.lname.label}}</label>
+                      {{form.lname}}
+                    </div>
+                  </div>
+                  <div class="field-flex grid2">
+                    <div class="field">
+                      <label for="">{{form.nin.label}}</label>
+                      {{form.nin}}
+                    </div>
+                    <div class="field">
+                      <label for="">{{form.email.label}}</label>
+                      {{form.email}}
+                    </div>
+                  </div>
+                  <div class="field-flex grid2">
+                    <div class="field">
+                      <label for="">{{form.phone_number.label}}</label>
+                      {{form.phone_number}}
+                    </div>
+
+                    <div class="field">
+                      <label for="">{{form.gender.label}}</label>
+                      {{form.gender}}
+                    </div>
+                    <div class="field">
+                      <label for="">{{form.date_of_birth.label}}</label>
+                      {{form.date_of_birth}}
+                    </div>
+                    <input type="submit" class="btn-green" />
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+      function get_zones() {
+        var region_select = document.getElementById("region");
+        var zone_select = document.getElementById("zone");
+
+        // Show a loading indicator for zones
+        zone_select.innerHTML =
+          "<option disabled selected>Loading zones...</option>";
+
+        // Fetch zones for the selected region using AJAX
+        var region_id = region_select.value;
+        fetch(`/get_zones/?region_id=${region_id}`)
+          .then((response) => response.json())
+          .then((data) => {
+            // Hide the loading indicator
+            zone_select.innerHTML = "";
+
+            // Update the 'zone' dropdown with the fetched data
+            data.forEach((zone) => {
+              var option = document.createElement("option");
+              option.value = zone.id;
+              option.text = zone.name;
+              zone_select.add(option);
+            });
+          })
+          .catch((error) => console.error("Error:", error));
+      }
+    </script>
+
+    <script src="{% static 'scripts/app.js'%}"></script>
+  </body>
+</html>

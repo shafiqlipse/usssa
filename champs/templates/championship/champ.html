@@ -1,0 +1,31 @@
+{% extends "dashboard/dashboard.html" %}
+
+<!--static-->
+{% block title %}{{championship.name}}{% endblock %}
+<!--static-->
+{% load static %}
+<!--khfufufu-->
+{% block content %}
+<div class="officials-page">
+  <img src="{{championship.thumbnail.url}}" alt="" />
+  <h1>{{championship.name}}</h1>
+
+  <div class="season-model-form">
+    <form action="" method=POST class="form-control">
+        {% csrf_token %}
+
+        {{cform.as_p}}
+        <button type="submit" class='btn btn-danger'>submit</button>
+    </form>
+  </div>
+  <div class="seasons">
+    {% for season in seasons %}
+    <div class="season">
+        {{season.championship}}
+        {{season.name}}
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

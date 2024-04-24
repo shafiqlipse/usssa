@@ -1,0 +1,53 @@
+{% extends "main/Base.html" %} {% block content %}
+<div class="fixtures-page">
+  <h1>fixtures</h1>
+  <hr />
+  <div class="page-grid">
+    <div class="mid-column">
+      <div class="fixture-groups">
+        {% regroup fixtures by competition as competition_list %}
+        <!---->
+        {% for competition in competition_list %}
+        <h1>{{ competition.grouper }}</h1>
+        {% regroup competition.list by group as group_list %}
+        <!---->
+        {% for group in group_list %}
+        <h2>{{ group.grouper }}</h2>
+        <div class="fixtures">
+          {% for fixture in group.list %}
+          <div class="fixtue">
+            <a href="" class="fixture flex">
+              <span>{{ fixture.team1 }}</span>
+              <img
+                src="{{ fixture.team1.school.badge.url }}"
+                alt=""
+              />
+            </a>
+            <div class="mid">
+             
+              {% if fixture.status == "Pending" %}
+              <h4>{{ fixture.date|date:"d-m-Y" }}</h4>
+              {% else %}
+              <h6>{{fixture.team1_score}}--{{fixture.team2_score}}</h6>
+              {% endif %}
+            </div>
+            <a href="" class="fixture flex">
+              <img
+                src="{{ fixture.team2.school.badge.url }}"
+                alt=""
+              />
+              <span>{{ fixture.team2 }}</span>
+            </a>
+          </div>
+          <hr />
+          {% endfor %}
+        </div>
+        {% endfor %} {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="right-column"></div>
+
+  {% endblock %}
+</div>

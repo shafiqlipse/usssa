@@ -1,0 +1,27 @@
+.fixture-page {
+  padding: 20px;
+}
+.fixture-page .teams {
+  grid-template-columns: 200px 1fr 200px;
+}
+.fixture-page .teams .logos {
+  text-align: center;
+}
+.fixture-page .teams .logos .log img {
+  width: 100px;
+  color: rgb(0, 128, 128);
+}
+.fixture-page .teams .fixture {
+  background-color: red;
+  border-radius: 20px;
+}
+.fixture-page .teams .fixture .fix .teami {
+  padding: 20px;
+}
+.fixture-page .teams .fixture .fix .teamwi {
+  padding: 20px;
+  background-color: #fff;
+  margin-bottom: 10px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}/*# sourceMappingURL=fixture.css.map */

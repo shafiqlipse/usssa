@@ -1,0 +1,9 @@
+{% extends "dashboard/dashboard.html" %} {% load static %} {% block content %}
+<h2>Create a New Season</h2>
+
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %} {{ form }} {# Render the competition form #}
+
+  <input type="submit" class="btn-submit" />
+</form>
+{% endblock %}

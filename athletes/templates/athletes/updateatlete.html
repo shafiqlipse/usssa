@@ -1,0 +1,106 @@
+{% extends "dashboard/dashboard.html" %} {%load static%}
+<!--title starts-->
+{%block title%}Add Athlete {% endblock %}
+<!--title ends-->
+{% block content %}
+
+<div class="profile-update">
+  <h1>Add Athlete</h1>
+
+  <form
+    action=""
+    method="POST"
+    class="form-ctrl glue"
+    enctype="multipart/form-data"
+  >
+    {% csrf_token %} {{form.as_p}}
+    <!--
+   <div class="fields flex">
+      <div class="left">
+        <div class="field">
+          <label>{{form.photo.label}} </label>{% if form.instance.photo %}
+          <img
+            src="{{ form.instance.photo.url }}"
+            id="image-preview"
+            alt="Current Photo"
+          />
+          {% else %}
+
+          <img
+            src="{% static 'images/profile.png'%}"
+            id="image-preview"
+            alt="No Photo"
+          />
+          {% endif %}
+        </div>
+        <div class="field">
+          <input
+            type="file"
+            name="photo"
+            accept="image/*"
+            onchange="displayImage(this);"
+            id="id_photo"
+          />
+        </div>
+
+        <div class="field flex">
+          <label>{{ form.classroom.label}}</label> {{form.classroom}}
+        </div>
+        <div class="field flex">
+          <label>{{ form.gender.label}}</label> {{form.gender}}
+        </div>
+      </div>
+      <div class="other-fields">
+        <div class="field flex">
+          <label>{{ form.name.label}}</label> {{form.name}}
+        </div>
+        <div class="field flex">
+          <label>{{ form.lin.label}} </label>{{form.lin}}
+        </div>
+        <div class="field flex">
+          <label>{{ form.sport.label}}</label> {{form.sport}}
+        </div>
+        <div class="field flex">
+          <label>{{ form.Parent_fname.label}}</label> {{form.Parent_fname}}
+        </div>
+        <div class="field flex">
+          <label>{{ form.Parent_lname.label}}</label> {{form.Parent_lname}}
+        </div>
+        <div class="field flex">
+          <label>{{ form.parent_email.label}}</label> {{form.parent_email}}
+        </div>
+        <div class="field flex">
+          <label>{{ form.parent_phone_number.label}}</label>
+          {{form.parent_phone_number}}
+        </div>
+        <div class="field flex">
+          <label>{{ form.parent_nin.label}}</label> {{form.parent_nin}}
+        </div>
+        <div class="field flex">
+          <label>{{ form.parent_gender.label}}</label> {{form.parent_gender}}
+        </div>
+        <div class="field flex">
+          <label>{{ form.relationship.label}}</label> {{form.relationship}}
+        </div>
+        <div class="field flex">
+          <label>{{ form.address.label}}</label> {{form.address}}
+        </div>
+      </div>
+    </div>
+    
+ -->
+    <button type="submit" class="btn-submit">Save athlete</button>
+  </form>
+
+  <script>
+    function displayImage(input) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        document.getElementById("image-preview").src = e.target.result;
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+  </script>
+</div>
+
+{% endblock %}

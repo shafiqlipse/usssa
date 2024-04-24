@@ -1,0 +1,138 @@
+{% extends 'dashboard/dashboard.html'%} {% block content%}
+
+<div class="fixture-page glue">
+  <div class="fixture-lining">
+    <div class="fixture-teams flex">
+      <div class="left flex">
+        <div class="team1-logo">
+          <img
+            src="{{fixture.team1.school.badge.url}}"
+            alt="{{fixture.team1}}"
+          />
+        </div>
+        <h3>{{fixture.team1}}</h3>
+      </div>
+      <div class="center">
+        {% if fixture.date %}
+        <div class="date">
+          <h2>{{fixture.date}}</h2>
+        </div>
+        {% else %}
+        <div class="vs">
+          <h1>VS</h1>
+        </div>
+        {% endif %}
+      </div>
+      <div class="left flex">
+        <div class="team1-logo">
+          <img
+            src="{{fixture.team2.school.badge.url}}"
+            alt="{{fixture.team2}}"
+          />
+        </div>
+        <h3>{{fixture.team2}}</h3>
+      </div>
+    </div>
+  </div>
+  <div class="other-details flex">
+    <h2>{{fixture.season.championship}}</h2>
+    <h6>{{fixture.competition}}</h6>
+    {% for official in officials %}
+    <h3>{{official.match_role}}</h3>
+    <h4>{{official.official}}</h4>
+    {% endfor %}
+  </div>
+  <div class="teams flex">
+    <div class="team1">
+      {% for athlete in fixture.team1.athletes.all %}
+      <li>{{ forloop.counter }}. {{athlete.name}}</li>
+      {% endfor %}
+      <h3>MANAGER</h3>
+      {{fixture.team1.official}}
+    </div>
+    <div class="team1">
+      {% for athlete in fixture.team2.athletes.all %}
+      <li>{{ forloop.counter }}. {{athlete.name}}</li>
+      {% endfor %}
+      <h3>MANAGER</h3>
+      {{fixture.team2.official}}
+    </div>
+  </div>
+
+  <div class="controls flex">
+    <a class="btn btn-primary" href="{%url 'edit_fixture' fixture.id%}">edit fixture</a
+    ><button
+      type="button"
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#addOfficialModal"
+    >
+      add official</button
+    ><!-- Example button to add a fixture event -->
+    <a href="{% url 'fixture-event' fixture.id %}" class="btn btn-primary"
+      >Add Fixture Event</a
+    >
+  </div>
+  <!-- Modal -->
+  <h2>MATCH RECARP</h2>
+  <div class="events">
+    {% for event in events %}
+    <div class="event">
+      {{event.minute}} {{event.event_type}} {{event.team}} {{event.athlete}}
+    </div>
+    {% endfor %}
+  </div>
+  <!-- Modal -->
+  <div
+    class="modal fade"
+    id="addOfficialModal"
+    tabindex="-1"
+    aria-labelledby="addOfficialModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addOfficialModalLabel">Add Official</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <!-- Display form fields -->
+            {{ cform.non_field_errors }}
+            <div class="mb-3">
+              <label
+                for="{{ cform.match_role.id_for_label }}"
+                class="form-label"
+                >Official</label
+              >
+              {{ cform.official }}
+            </div>
+            <div class="mb-3">
+              <label
+                for="{{ cform.match_role.id_for_label }}"
+                class="form-label"
+                >Match Role</label
+              >
+              {{ cform.match_role }}
+            </div>
+            <!-- Add more fields as needed -->
+            <button type="submit" class="btn btn-primary">Add Official</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="drop-item"
+  ><a href="{% url 'football_standings'%}" class="droplink"
+    >Standings</a
+  ></span
+>
+</div>
+{%endblock%}

@@ -1,0 +1,40 @@
+.football-details .fixtures {
+  width: 50%;
+}
+.football-details .fixtures .ficture .fixture {
+  width: 100%;
+  justify-content: space-between;
+}
+.football-details .fixtures .ficture .fixture .fix-left {
+  width: 35%;
+}
+.football-details .fixtures .ficture .fixture .fix-left span {
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 12px;
+}
+.football-details .fixtures .ficture .fixture .fix-left img {
+  width: 60px;
+}
+.football-details .fixtures .ficture .fixture .fix-right {
+  width: 35%;
+  text-align: right;
+}
+.football-details .fixtures .ficture .fixture .fix-right span {
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 12px;
+}
+.football-details .fixtures .ficture .fixture .fix-right img {
+  width: 60px;
+}
+.football-details .fixtures .ficture .fixture .fix-center {
+  width: 20%;
+  padding: 10px;
+  background-color: rgb(236, 236, 236);
+  text-align: center;
+}
+.football-details .fixtures .ficture .fixture .fix-center a {
+  font-weight: bold;
+  color: rgb(220, 5, 5);
+}/*# sourceMappingURL=season_details.css.map */

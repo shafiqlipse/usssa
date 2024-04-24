@@ -1,0 +1,112 @@
+{% extends "dashboard/dashboard.html" %}
+<!---->
+{% block title %}{{ championship.name }}{% endblock %}
+<!---->
+{% load static %} {% block content %}
+<div class="football-page">
+  <div class="officials-page">
+    <div class="flex">
+      <h1>Football Competitions</h1>
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-toggle="modal"
+        data-target="#exampleModal"
+      >
+        Add competition
+      </button>
+    </div>
+    <div class="officiallist">
+      <table id="myTable" class="display">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Championship</th>
+            <th>sport</th>
+            <th>gender</th>
+            <th>age</th>
+            <th>Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for comp in comps%}
+          <tr>
+            <td><a href="{%url 'comp' comp.id%}">{{ comp.name }}</a></td>
+            <td>{{comp.championship}} {{comp.season}}</td>
+            <td>{{comp.sport}}</td>
+            <td>{{comp.gender}}</td>
+            <td>{{comp.age}}</td>
+            <td></td>
+          </tr>
+
+          {%endfor%}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+    <div class= id="myModal" class="modal">
+      <div  class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="" method="post" class="form-control">
+            {% csrf_token %} {{ cform.as_p }} {% if cform.errors %}
+            <ul>
+              {% for field, errors in cform.errors.items %}
+              <!---->
+              {% for error in errors %}
+              <li>{{ field }}: {{ error }}</li>
+              {% endfor %} {% endfor %}
+            </ul>
+            {% endif %}
+            <button type="submit" class="btn btn-success">Submit</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+ 
+  <script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on the button, open the modal
+    btn.onclick = function () {
+      modal.style.display = "block";
+    };
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+      modal.style.display = "none";
+    };
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+  </script>
+</div>
+{% endblock %}

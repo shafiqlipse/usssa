@@ -1,0 +1,188 @@
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>USSSA | {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{%static 'css/dashboard/school.css'%}" />
+    <link rel="icon" href="{%static 'images/logo.png'%}" sizes="35x35" />
+    <link rel="stylesheet" href="{% static 'css/main/main.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/dashboard/dashboard.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/profile/editpeofile.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/officials.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/css/all.min.css'%}" />
+    <link rel="stylesheet" href="{% static "css/modal_styles.css" %}"> <link
+    rel="stylesheet" href="{% static "css/transfer.css" %}">
+  </head>
+  <body>
+    <div class="school-dashboard light" id="school-dashboard">
+      <div class="sidebar">
+        <a href="" class="logo-area flex">
+          <img src="{% static 'images/logo.png'%}" alt="" />
+          <span>USSSA</span>
+        </a>
+        <div class="sidebar-nav flex">
+          <li class="nav-item">
+            <div class="item-head flex">
+              <h4><i class="fa fa-user" aria-hidden="true"></i>Profile</h4>
+              <i class="fa fa-chevron-right tog"></i>
+            </div>
+            <div class="menu-items menu-on">
+              <a href="{% url 'schoolprofile' user.id %}" class="sidebar-link"
+                >Profile</a
+              ><a href="{% url 'updateprofile'%}" class="sidebar-link"
+                >Edit profile</a
+              ><a href="{% url 'updateheadteacher'%}" class="sidebar-link"
+                >head teacher</a
+              >
+            </div>
+          </li>
+          <hr />
+          <li class="nav-item">
+            <div class="item-head flex">
+              <h4><i class="fa fa-users"></i> Officials</h4>
+              <i class="fa fa-chevron-right tog"></i>
+            </div>
+            <div class="menu-items menu-on">
+              <a href="{% url 'officials'%}" class="sidebar-link">officials</a
+              ><a href="{% url 'addofficial'%}" class="sidebar-link"
+                >Add official</a
+              ><a href="" class="sidebar-link">import officials</a>
+            </div>
+          </li>
+          <hr />
+          <li class="nav-item">
+            <div class="item-head flex">
+              <h4><i class="fa fa-bars"></i> Athletes</h4>
+              <i class="fa fa-chevron-right tog"></i>
+            </div>
+            <div class="menu-items menu-on">
+              <a href="{%url 'athletes'%}" class="sidebar-link">all Athletes</a
+              ><a href="{%url 'addathlete'%}" class="sidebar-link"
+                >add Athlete</a
+              ><a href="" class="sidebar-link">import Athletes</a>
+            </div>
+          </li>
+          <hr />
+          <li class="nav-item">
+            <div class="item-head flex">
+              <h4><i class="fa fa-bars"></i> Teams</h4>
+              <i class="fa fa-chevron-right tog"></i>
+            </div>
+            <div class="menu-items menu-on">
+              <a href="{% url 'teams'%}" class="sidebar-link">All teams</a
+              ><a href="{% url 'newteam'%}" class="sidebar-link">add a team</a
+              ><a href="" class="sidebar-link">import teams</a>
+            </div>
+          </li>
+          <hr />
+          <li class="nav-item">
+            <div class="item-head flex">
+              <h4><i class="fa fa-bars"></i> Transfers</h4>
+              <i class="fa fa-chevron-right tog"></i>
+            </div>
+            <div class="menu-items menu-on">
+              <a href="{%url 'athlete_list'%}" class="sidebar-link"
+                >all Athletes</a
+              ><a href="" class="sidebar-link">my Transfers</a>
+            </div>
+          </li>
+        </div>
+      </div>
+
+      <div class="mass-area">
+        <div class="topbar">
+          <div class="top-links flex">
+            <div class="search-bar">
+              <form action="" class="search-form flex">
+                <input type="search" />
+                <button class="search-btn">search</button>
+              </form>
+            </div>
+            <h2>{{user.schoolprofile.school_name}}</h2>
+            <div class="controls flex">
+              <li>
+                <button class="bell" id="myBtn">
+                  <i class="fa fa-bell"></i>{{unread_count}}
+                </button>
+              </li>
+              <!--modal starts here-->
+
+              <div id="myModal" class="modal">
+                <div class="modal-content">
+                  <span class="close" onclick="closeModal()">&times;</span>
+                  <h2>Notifications</h2>
+                  {% for notification in notifications %}
+                  <h3>{{ notification.transfer_request.athlete }}</h3>
+                  <p>
+                    Transfer Request #{{ notification.transfer_request.id }} -
+                    <a
+                      href="{{ notification.transfer_request.get_absolute_url }}"
+                      >View</a
+                    >
+                  </p>
+                  {% endfor %}
+                </div>
+              </div>
+
+              <!--modal ends here-->
+            </div>
+            <div class="account">
+              {% if user.schoolprofile %}
+              <div class="account-box flex" onclick="ToggleAccount()">
+                {% if user.schoolprofile.badge %}
+                <img src="{{user.schoolprofile.badge.url}}" alt="" />
+                {% else %}
+                <img src="{% static 'images/logo.png'%}" alt="" />
+                {% endif %}
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <div class="account-toggle account-off">
+                <div class="account-control flex">
+                  <li class="navlist-item">
+                    <a href="" class="list-link">my account</a>
+                  </li>
+                  <li class="navlist-item">
+                    <a href="" class="list-link">profile</a>
+                  </li>
+                  <li class="theme-toggler flex" onclick="Toggletheme()">
+                    <h6>Theme</h6>
+                    <i class="fa fa-toggle-off" id="icon"></i>
+                  </li>
+
+                  <li class="navlist-item">
+                    <a href="{% url 'logout'%}" class="list-link">logout</a>
+                  </li>
+                </div>
+                {% else %} {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-area">{% block content %}{% endblock %}</div>
+      </div>
+    </div>
+    <script>
+      // navbar.js
+      const links = document.querySelectorAll("menu-item a");
+
+      links.forEach((link) => {
+        link.addEventListener("click", function (e) {
+          links.forEach((link) => link.classList.remove("active"));
+          this.classList.add("active");
+        });
+      });
+
+      const currentUrl = window.location.href;
+
+      links.forEach((link) => {
+        if (link.href === currentUrl) {
+          link.classList.add("active");
+        }
+      });
+    </script>
+    <script src="{% static 'scripts/app.js'%}"></script>
+    <script src="{% static 'js/nots.js'%}"></script>
+  </body>
+</html>

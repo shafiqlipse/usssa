@@ -1,0 +1,5 @@
+.disciplines-page .sport-cards .card img {
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}/*# sourceMappingURL=discipline.css.map */

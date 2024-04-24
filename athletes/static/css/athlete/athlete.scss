@@ -1,0 +1,63 @@
+.athlete-page {
+  width: 100%;
+  .top {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 30px;
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .imagery {
+      width: 400px;
+      height: 400px;
+      @media (max-width: 468px) {
+        width: 100%;
+        height: auto;
+      }
+      img {
+        width: 100%;
+        padding: 20px;
+      }
+    }
+    .details {
+      padding: 20px;
+      h1 {
+        font-size: 1.7em;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: rgb(0, 44, 105);
+      }
+      h4 {
+        font-size: 15px;
+        color: rgb(87, 87, 87);
+        text-transform: capitalize;
+      }
+      .dets {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        @media (max-width: 568px) {
+          grid-template-columns: repeat(1, 1fr);
+        }
+        .doets {
+          h2 {
+            margin: 10px 0;
+            font-size: 1.1em;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: rgb(0, 44, 105);
+          }
+          p {
+            font-weight: bold;
+            text-transform: capitalize;
+
+            span {
+              font-weight: 400;
+              text-transform: uppercase;
+            }
+          }
+        }
+      }
+    }
+  }
+}

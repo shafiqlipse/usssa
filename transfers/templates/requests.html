@@ -1,0 +1,51 @@
+{% extends "dashboard/dashboard.html" %}
+
+<!--static-->
+{% block title %}Athletes{% endblock %}
+<!--static-->
+{% load static %}
+<!--khfufufu-->
+{% block content %}
+<div class="officials-page">
+  <div class="flex">
+    <h1>Athletes</h1>
+    
+  </div>
+  <div class="officiallist">
+    <table id="myTable" class="display">
+      <thead>
+        <tr>
+          <th>Photo</th>
+          <th>Name</th>
+          <th>nin</th>
+          <th>sport</th>
+          <th>gender</th>
+          <th>age</th>
+          <th>Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for athlete in athletes%}
+        <tr>
+          <td>
+            {% if athlete.photo %}
+            <img src="{{athlete.photo.url}}" alt="" />
+            {% else %}
+            <img src="{%static 'images/profile.png'%}" alt="" />
+            {% endif %}
+          </td>
+          <td><a href="{% url 'athlete' athlete.id%}">{{athlete.name}}</a></td>
+          <td>{{athlete.lin}}</td>
+          <td>{{athlete.sport}}</td>
+          <td>{{athlete.gender}}</td>
+          <td>{{athlete.age}}</td>
+          <td><a href="{% url 'initiate_transfer' athlete.id%}">Request transfer</a></td>
+        </tr>
+
+        {%endfor%}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock %}

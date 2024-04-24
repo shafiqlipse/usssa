@@ -1,0 +1,50 @@
+{% extends "dashboard/dashboard.html" %} {%load static%}
+<!--title starts-->
+{%block title%}{{competition.name}} {% endblock %}
+<!--title ends-->
+{% block content %}
+
+<div class="competition glue">
+  <h1>{{competition.name}}</h1>
+  <div class="athlete-details grid3">
+    <div class="student-box">
+      <ul class="details">
+        <li>Name : {{competition.name}}</li>
+        <li>Type : {{competition.comtype}}</li>
+        <li>Sport : {{competition.sport}}</li>
+        <li>Gender : {{competition.gender}}</li>
+        <li>Age : {{competition.age}}</li>
+        <li>Category : {{competition.comcat}}</li>
+      </ul>
+    </div>
+    <a href="{% url 'updatecompetition' competition.id%}" class="btn-green"
+      >Edit competition</a
+    >
+    <a href="{% url 'deletecompetition' competition.id%}" class="btn-submit"
+      >Delete competition</a
+    >
+  </div>
+  <div class="competitons grid3">
+    <div class="left">
+      <h3>Seasons</h3>
+      <a href="{% url 'create_nseason'%}" class="btn-submit">create season</a>
+      <div class="seasons">
+        {% for season in seasons %} {% if season%}
+        <div class="season">
+          <a href="{% url 'nseason' season.id%}">{{ season.name }}</a>
+        </div>
+        {% else%}
+        <p>No seasons sofar</p>
+        {%endif%} {% endfor %}
+      </div>
+    </div>
+    <div class="center">
+      <h3>Fixtures</h3>
+    </div>
+    <div class="right">
+      <h3>News</h3>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

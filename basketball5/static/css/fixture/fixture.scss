@@ -1,0 +1,32 @@
+.fixture-page {
+  padding: 20px;
+  .teams {
+    grid-template-columns: 200px 1fr 200px;
+    .logos {
+      text-align: center;
+      .log {
+        img {
+          width: 100px;
+          color: rgb(0, 128, 128);
+        }
+      }
+    }
+    .fixture {
+      background-color: red;
+      //   padding: 20px;
+      border-radius: 20px;
+      .fix {
+        .teami {
+          padding: 20px;
+        }
+        .teamwi {
+          padding: 20px;
+          background-color: #fff;
+          margin-bottom: 10px;
+          border-bottom-left-radius:20px ;
+          border-bottom-right-radius: 20px;
+        }
+      }
+    }
+  }
+}

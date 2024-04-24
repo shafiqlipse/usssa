@@ -1,0 +1,53 @@
+{% extends "dashboard/dashboard.html" %}
+
+<!--static-->
+{% block title %}Athletes{% endblock %}
+<!--static-->
+{% load static %}
+<!--khfufufu-->
+{% block content %}
+<div class="officials-page">
+  <div class="flex">
+    <h1>Athletes</h1>
+   
+  </div>
+  <div class="officiallist">
+    <table id="myTable" class="display">
+      <thead>
+        <tr>
+          <th>Photo</th>
+          <th>Name</th>
+       
+          <th>Emis</th>
+          <th>Center number</th>
+          <th>region</th>
+          <th>zone</th>
+          <th>edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for school in schools%}
+        <tr>
+          <td>
+            {% if school.badge %}
+            <img src="{{school.badge.url}}" alt="" />
+            {% else %}
+            <img src="{%static 'images/profile.png'%}" alt="" />
+            {% endif %}
+          </td>
+          <td><a href="">{{school.school_name}}</a></td>
+        
+          <td>{{school.EMIS}}</td>
+          <td>{{school.center_number}}</td>
+          <td>{{school.region}}</td>
+          <td>{{school.zone}}</td>
+          <td><a href="{% url 'updateprofile' school.id%}">Edit</a></td>
+        </tr>
+
+        {%endfor%}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock %}

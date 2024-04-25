@@ -7,19 +7,7 @@ class SchoolProfileForm(forms.ModelForm):
         model = School
         fields = [
             "school_name",
-            "EMIS",
-            "badge",
-            "region",
-            "district",
-            "zone",
-            "fname",
-            "lname",
-            "nin",
-            "photo",
-            "phone_number",
-            "email",
-            "gender",
-            "date_of_birth",
+            
         ]
 
         widgets = {

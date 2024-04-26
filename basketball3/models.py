@@ -6,6 +6,7 @@ from football.models import Season
 
 from officials.models import Official
 from accounts.models import Championship
+from school.models import School
 
 
 # Create your models here.
@@ -39,7 +40,7 @@ class B3Competition(models.Model):
 class B3Group(models.Model):
     competition = models.ForeignKey(B3Competition, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
-    b3teams = models.ManyToManyField(Team)
+    b3teams = models.ManyToManyField(School)
 
     def __str__(self):
         return self.name

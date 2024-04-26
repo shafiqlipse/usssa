@@ -41,7 +41,7 @@ class Competition(models.Model):
         null=True,
         blank=True,
     )
-    teams = models.ManyToManyField(Team)
+    teams = models.ManyToManyField(School)
     participants = models.IntegerField()
     groups = models.IntegerField()
 
@@ -52,7 +52,7 @@ class Competition(models.Model):
 class Group(models.Model):
     competition = models.ForeignKey(Competition, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
-    teams = models.ManyToManyField(Team)
+    teams = models.ManyToManyField(School)
 
     def __str__(self):
         return self.name
@@ -82,8 +82,8 @@ class Fixture(models.Model):
 
     venue = models.CharField(max_length=100, null=True, blank=True)
     date = models.DateTimeField(null=True, blank=True)
-    team1 = models.ForeignKey(Team, related_name="team1", on_delete=models.CASCADE)
-    team2 = models.ForeignKey(Team, related_name="team2", on_delete=models.CASCADE)
+    team1 = models.ForeignKey(School, related_name="team1", on_delete=models.CASCADE)
+    team2 = models.ForeignKey(School, related_name="team2", on_delete=models.CASCADE)
     team1_score = models.IntegerField(null=True, blank=True)
     team2_score = models.IntegerField(null=True, blank=True)
 
@@ -133,7 +133,7 @@ class MatchEvent(models.Model):
         max_length=20,
         choices=EVENT_CHOICES,
     )  # Example: "Card", "Corner", "Foul", "Assist"
-    team = models.ForeignKey(Team, related_name="team", on_delete=models.CASCADE)
+    team = models.ForeignKey(School, related_name="team", on_delete=models.CASCADE)
     athlete = models.ForeignKey(
         Athlete, related_name="athlete", on_delete=models.CASCADE, null=True, blank=True
     )

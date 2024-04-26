@@ -116,7 +116,7 @@ def generate_fixtures_view(request, competition_id):
     season = competition.season
 
     # Fetch all teams for the competition (assuming you have a Team model)
-    teams = Team.objects.all()
+    teams = School.objects.all()
 
     # Fetch all groups for the competition
     groups = Group.objects.filter(competition=competition)

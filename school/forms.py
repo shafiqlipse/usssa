@@ -10,13 +10,8 @@ class SchoolProfileForm(forms.ModelForm):
             
         ]
 
-        widgets = {
-            "date_of_birth": forms.DateInput(attrs={"type": "date"}),
-        }
+   
 
-    def __init__(self, *args, **kwargs):
-        super(SchoolProfileForm, self).__init__(*args, **kwargs)
-        self.fields["badge"].widget.attrs["onchange"] = "displayImage(this);"
 
 
 class OfficialForm(forms.ModelForm):

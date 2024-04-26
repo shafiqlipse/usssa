@@ -54,7 +54,7 @@ urlpatterns = [
     path("school/", include("school.urls")),
     path("athletes/", include("athletes.urls")),
     path("football/", include("football.urls")),
-    path("basketball3/", include("basketball3.urls")),
+    # path("basketball3/", include("basketball3.urls")),
     # path("competitions/", include("competitions.urls")),
     # path("football/", include("season.urls")),
     # path("fixtures/", include("fixtures.urls")),

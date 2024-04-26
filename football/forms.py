@@ -1,13 +1,14 @@
 from django import forms
 from .models import Competition
 from athletes.models import Team
+from school.models import School
 from .models import Season, Group
 from django.forms import CheckboxSelectMultiple
 
 
 class CompForm(forms.ModelForm):
     teams = forms.ModelMultipleChoiceField(
-        queryset=Team.objects.all(),  # Replace Team with your actual model name
+        queryset=School.objects.all(),  # Replace Team with your actual model name
         widget=CheckboxSelectMultiple,
     )
 
@@ -30,7 +31,7 @@ class CompForm(forms.ModelForm):
 
 class GroupForm(forms.ModelForm):
     teams = forms.ModelMultipleChoiceField(
-        queryset=Team.objects.all(),  # Replace Team with your actual model name
+        queryset=School.objects.all(),  # Replace Team with your actual model name
         widget=CheckboxSelectMultiple,
     )
 

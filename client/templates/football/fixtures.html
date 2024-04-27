@@ -1,4 +1,4 @@
-{% extends "main/Base.html" %} {% block content %}
+{% extends "main/Base.html" %} {% load static %} {% block content %}
 <div class="fixtures-page">
   <h1>fixtures</h1>
   <hr />
@@ -18,24 +18,26 @@
           <div class="fixtue">
             <a href="" class="fixture flex">
               <span>{{ fixture.team1 }}</span>
-              <img
-                src="{{ fixture.team1.school.badge.url }}"
-                alt=""
-              />
+              {% if fixture.school.badge %}
+              <img src="{{ fixture.team1.school.badge.url }}" alt="" />
+              {% else %}
+              <img src="{% static '/images/logo.png'%}" alt="" />{% endif %}
             </a>
             <div class="mid">
-             
               {% if fixture.status == "Pending" %}
-              <h4>{{ fixture.date|date:"d-m-Y" }}</h4>
+              <h4>{{ fixture.date|time:"H:i" }}</h4>
+              <p>{{ fixture.date|date:"F j, Y" }}</p>
+
+
               {% else %}
-              <h6>{{fixture.team1_score}}--{{fixture.team2_score}}</h6>
+              <h6>{{fixture.team1_score}} - {{fixture.team2_score}}</h6>
               {% endif %}
             </div>
             <a href="" class="fixture flex">
-              <img
-                src="{{ fixture.team2.school.badge.url }}"
-                alt=""
-              />
+              {% if fixture.school.badge %}
+              <img src="{{ fixture.team2.school.badge.url }}" alt="" />
+              {% else %}
+              <img src="{% static '/images/logo.png'%}" alt="" />{% endif %}
               <span>{{ fixture.team2 }}</span>
             </a>
           </div>

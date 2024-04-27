@@ -7,8 +7,11 @@
   <div class="stands grid2">
     <div class="group">
       {% for data in standings_data %}
-      <h2>{{ data.competition.season.championship }} {{ data.competition.season.name }} - {{ data.competition.name }}</h2>
 
+      <h2>{{ data.competition.season.championship }}</h2>
+      <h4>{{ data.competition.season.name }}</h4>
+      -
+      <p>{{ data.competition.name }}</p>
       {% for group_data in data.standings %}
       <h3>{{ group_data.group.name }} Standings</h3>
 
@@ -29,7 +32,7 @@
         </div>
         {% for team, standings in group_data.standings %}
         <div class="standings-row{% if forloop.first %} first-row{% endif %}">
-          <div><a href="">{{ team }}</a></div>
+          <div><a href="">{{ team|slice:":2" }}</a></div>
           <div>{{ standings.played }}</div>
           <div>{{ standings.won }}</div>
           <div>{{ standings.drawn }}</div>

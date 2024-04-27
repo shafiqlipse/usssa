@@ -10,7 +10,10 @@
     margin: 10px 0;
   }
   .page-grid {
-    width: 520px;
+    width: 700px;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
     .mid-column {
       width: 100%;
       .fixture-groups {
@@ -46,6 +49,12 @@
               background-color: #fbfbfb45;
               padding: 5px;
               text-align: center;
+              h6 {
+                font-size: 20px;
+              }
+              p{
+                font-size: 10px;
+              }
             }
           }
           .date {

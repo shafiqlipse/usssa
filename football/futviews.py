@@ -14,7 +14,7 @@ from football.models import Competition
 
 
 def footballFixtures(request):
-    fixtures = Fixture.objects.all()
+    fixtures = Fixture.objects.all().order_by("-date")
 
     # Group fixtures by competition and then by date
 

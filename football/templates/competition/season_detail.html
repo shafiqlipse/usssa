@@ -31,30 +31,7 @@
       Generate Fixtures
     </button>
   </form>
-  <div class="fixtures">
-    <div class="ficture">
-      {%for fixture in fixtures%}
-      <div class="fixture flex">
-        <div class="fix-left">
-          <span>{{fixture.team1}} </span
-          ><img src="{{fixture.team1.school.badge.url}}" alt="" />
-        </div>
-        <div class="fix-center">
-          {% if fixture.date %}
-          <a href="{%url 'fixture' fixture.id%}">{{fixture.date}}</a>{% else %}
-          <a href="{%url 'fixture' fixture.id%}">DETAILS</a>{% endif %}
-        </div>
-        <div class="fix-right">
-          <img src="{{fixture.team2.school.badge.url}}" alt="" />
-          <span> {{fixture.team2}}</span>
-        </div>
-      </div>
-      <hr>
-      {%empty%}
-    </div>
-    <p>No Fixtures yet</p>
-    {% endfor%}
-  </div>
+  
 </div>
 <script>
   document

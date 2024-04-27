@@ -18,5 +18,6 @@ urlpatterns = [
     ),
     # path("sportdetail/<int:id>", sport_details, name="sport_details"),
     path("fixture_details/<int:id>", FixtureDetail, name="fixture"),
+    path("fixtures", fixtures, name="ffixtures"),
     path("fixture_update/<int:id>", edit_fixtures_view, name="edit_fixture"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -218,3 +218,8 @@ def FixtureEvent(request, id):
     }
 
     return render(request, "fixtures/event.html", context)
+
+def fixtures(request):
+    fixtures = Fixture.objects.all().order_by("-date")
+    context={"fixtures":fixtures}
+    return render(request, "fixtures/fixtures.html",context)

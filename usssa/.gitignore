@@ -1,5 +1,4 @@
-# Ignore settings.py file
 settings.py
-
-# Ignore Django migrations
 */migrations/
+
+.env

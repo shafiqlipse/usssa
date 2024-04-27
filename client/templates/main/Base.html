@@ -42,110 +42,7 @@
   </head>
   <body>
     <div class="dashboard-wrapper light">
-      <div class="top-bar glue">
-        <nav class="topbar flex">
-          
-          <div class="main-toggle" onclick="menuToggle()">
-            <i class="fa fa-bars"></i>
-          </div>
-          <ul class="navbar-nav flex">
-            <li class="nav-item">
-              <a href="{% url 'home'%}" class="navlink">Home</a>
-            </li>
-            <li class="nav-item">
-              <a href="{% url 'about'%}" class="navlink">About</a>
-            </li>
-            <li class="nav-item">
-              <a href="" class="navlink">Championships</a>
-              <i class="fa fa-chevron-down"></i>
-              <div class="drop-menu glue">
-                <div class="menubox">
-                  <ul class="menu_links flex">
-                    <li class="drop-item">
-                      <a href="" class="droplink">Elite Championship</a>
-                    </li>
-
-                    <li class="drop-item">
-                      <a href="" class="droplink"
-                        >Fresh Diary Secondary Schools Games</a
-                      >
-                    </li>
-
-                    <li class="drop-item">
-                      <a href="" class="droplink">Football Boys Championship</a>
-                    </li>
-
-                    <li class="drop-item">
-                      <a href="" class="droplink">National Swimming Gala</a>
-                    </li>
-
-                    <li class="drop-item">
-                      <a href="" class="droplink">Ball Games II</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a href="{%url 'events'%}" class="navlink">Events</a>
-            </li>
-            <li class="nav-item">
-              <a href="{% url 'contact'%}" class="navlink">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a href="{%url 'school'%}" class="navlink">REgister school</a>
-            </li>
-          </ul>
-          <ul class="navbarnav nav-menu-off">
-            <li class="nav-item">
-              <a href="{% url 'home'%}" class="navlink">Home</a>
-            </li>
-            <li class="nav-item">
-              <a href="{% url 'about'%}" class="navlink">About</a>
-            </li>
-            <li class="nav-item">
-              <a href="" class="navlink">Championships</a>
-              <i class="fa fa-chevron-down"></i>
-              <div class="drop-menu glue">
-                <div class="menubox">
-                  <ul class="menu_links flex">
-                    <li class="drop-item">
-                      <a href="" class="droplink">Elite Championship</a>
-                    </li>
-
-                    <li class="drop-item">
-                      <a href="" class="droplink"
-                        >Fresh Diary Secondary Schools Games</a
-                      >
-                    </li>
-
-                    <li class="drop-item">
-                      <a href="" class="droplink">Football Boys Championship</a>
-                    </li>
-
-                    <li class="drop-item">
-                      <a href="" class="droplink">National Swimming Gala</a>
-                    </li>
-
-                    <li class="drop-item">
-                      <a href="" class="droplink">Ball Games II</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a href="{%url 'events'%}" class="navlink">Events</a>
-            </li>
-            <li class="nav-item">
-              <a href="{% url 'contact'%}" class="navlink">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a href="" class="navlink">Media center</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+      <div class="top-bar glue"></div>
       <div class="main-bar flex">
         <nav class="navbar flex">
           <div class="logo-brand">
@@ -156,93 +53,112 @@
           </div>
           <ul class="navbar-nav flex">
             <li class="nav-item">
-              <a href="{% url 'home'%}" class="navlink">Home</a>
+              <a href="{% url 'football_fixtures'%}" class="navlink">Football</a>
             </li>
             <li class="nav-item">
-              <a href="{% url 'about'%}" class="navlink">Football</a>
+              <a href="" class="navlink"
+                >Basketball 3X3</a
+              >
             </li>
             <li class="nav-item">
-              <a href="" class="navlink">Basketball</a>
-              
+              <a href="" class="navlink"
+                >Basketball 5X5</a
+              >
             </li>
             <li class="nav-item">
-              <a href="{%url 'events'%}" class="navlink">Handball</a>
+              <a href="" class="navlink">Handball</a>
             </li>
             <li class="nav-item">
-              <a href="{% url 'contact'%}" class="navlink">woodball</a>
+              <a href="" class="navlink">Netball</a>
             </li>
             <li class="nav-item">
-              <a href="{%url 'school'%}" class="navlink">netball</a>
+              <a href="" class="navlink">Volleyball</a>
             </li>
             <li class="nav-item">
-              <a href="{%url 'school'%}" class="navlink">lacrose</a>
-            </li>
-            <li class="nav-item">
-              <a href="{%url 'school'%}" class="navlink">badminton</a>
-            </li>
-            <li class="nav-item">
-              <a href="{%url 'school'%}" class="navlink">Rugby</a>
-            </li>
-            <li class="nav-item">
-              <a href="{%url 'school'%}" class="navlink">Mind games</a>
-            </li>
-            <li class="nav-item">
-              <a href="{%url 'school'%}" class="navlink">athletics</a>
-            </li>
-            <li class="nav-item">
-              <a href="{%url 'school'%}" class="navlink">Volleyball</a>
+              <a href="" class="navlink">More ...</a>
+              <i class="fa fa-chevron-down"></i>
+              <div class="drop-menu glue">
+                <div class="menubox">
+                  <div class="menu_links flex">
+                    <span class="drop-item"
+                      ><a href="" class="droplink">lacrose</a></span
+                    >
+                    <span class="drop-item"
+                      ><a href="" class="droplink">swimming</a></span
+                    >
+                    <span class="drop-item"
+                      ><a href="" class="droplink">mind games</a></span
+                    >
+                    <span class="drop-item"
+                      ><a href="" class="droplink">woodball</a></span
+                    >
+                    <span class="drop-item"
+                      ><a href="" class="droplink">hockey</a></span
+                    >
+                    <span class="drop-item"
+                      ><a href="" class="droplink">News</a></span
+                    >
+                  </div>
+                  <div class="drop-content"></div>
+                </div>
+              </div>
             </li>
           </ul>
           <ul class="navbarnav nav-menu-off">
             <li class="nav-item">
-              <a href="{% url 'home'%}" class="navlink">Home</a>
+              <a href="{% url 'football'%}" class="navlink">Football</a>
             </li>
             <li class="nav-item">
-              <a href="{% url 'about'%}" class="navlink">About</a>
+              <a href="" class="navlink"
+                >Basketball 3X3</a
+              >
             </li>
             <li class="nav-item">
-              <a href="" class="navlink">Championships</a>
+              <a href="" class="navlink"
+                >Basketball 5X5</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="" class="navlink">Handball</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="navlink">Netball</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="navlink">Volleyball</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="navlink">More ...</a>
               <i class="fa fa-chevron-down"></i>
               <div class="drop-menu glue">
                 <div class="menubox">
-                  <ul class="menu_links flex">
-                    <li class="drop-item">
-                      <a href="" class="droplink">Elite Championship</a>
-                    </li>
-
-                    <li class="drop-item">
-                      <a href="" class="droplink"
-                        >Fresh Diary Secondary Schools Games</a
-                      >
-                    </li>
-
-                    <li class="drop-item">
-                      <a href="" class="droplink">Football Boys Championship</a>
-                    </li>
-
-                    <li class="drop-item">
-                      <a href="" class="droplink">National Swimming Gala</a>
-                    </li>
-
-                    <li class="drop-item">
-                      <a href="" class="droplink">Ball Games II</a>
-                    </li>
-                  </ul>
+                  <div class="menu_links flex">
+                    <span class="drop-item"
+                      ><a href="" class="droplink">lacrose</a></span
+                    >
+                    <span class="drop-item"
+                      ><a href="" class="droplink">swimming</a></span
+                    >
+                    <span class="drop-item"
+                      ><a href="" class="droplink">mind games</a></span
+                    >
+                    <span class="drop-item"
+                      ><a href="" class="droplink">woodball</a></span
+                    >
+                    <span class="drop-item"
+                      ><a href="" class="droplink">hockey</a></span
+                    >
+                    <span class="drop-item"
+                      ><a href="" class="droplink">News</a></span
+                    >
+                  </div>
+                  <div class="drop-content"></div>
                 </div>
               </div>
             </li>
-            <li class="nav-item">
-              <a href="{%url 'events'%}" class="navlink">Events</a>
-            </li>
-            <li class="nav-item">
-              <a href="{% url 'contact'%}" class="navlink">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a href="" class="navlink">Media center</a>
-            </li>
           </ul>
         </nav>
-        <div class="cntrols flex">
+        <div class="controls flex">
           <li class="control-item">
             <i class="fa fa-th-large"></i>
             <div class="notification modal-popup"></div>
@@ -258,10 +174,37 @@
             <i class="fa fa-cog" id="cwontrols" onclick="ToggleAccount()"></i>
             <div id="contoggle" class="account-toggle glue account-off">
               <!-- Modal content -->
-
+              {% if user.is_authenticated%}
               <div class="modal-content flex">
                 <!-- check if the loged in user is a school -->
+                {% if user.is_school%}
+                <div class="prof-img">
+                  <img src="{{ user.school.badge.url}}" alt="" />
+                </div>
+                <span class="modal-item"><a href="">Profile</a></span>
+                <span class="modal-item"
+                  ><a href="{% url 'schooldash' %}">Dashboard</a></span
+                >
+                <span class="modal-item"><a href="">Account</a></span>
+                <span class="modal-item"
+                  ><a href="{%url 'logout'%}">Logout</a></span
+                >
+                {%else%}
+                <span class="modal-item"><a href="">Profile</a></span>
+                <span class="modal-item"
+                  ><a href="{% url 'dashboard' %}">Dashboard</a></span
+                >
+                <span class="modal-item"><a href="">Account</a></span>
+                <span class="modal-item"
+                  ><a href="{% url 'logout' %}">Logout</a></span
+                >
+                {%endif%}
               </div>
+              {%else%}
+              <span class="modal-item"
+                ><a href="{% url 'login'%}">Login</a></span
+              >
+              {%endif%}
             </div>
           </li>
         </div>

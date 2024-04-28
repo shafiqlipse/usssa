@@ -4,47 +4,41 @@
   <hr />
   <div class="page-grid">
     <div class="mid-column">
+      <!---->
       <div class="fixture-groups">
-        {% regroup fixtures by competition as competition_list %}
+        {% regroup fixtures by fixture.date.date as fixture_list %}
         <!---->
-        {% for competition in competition_list %}
-        <h1>{{ competition.grouper }}</h1>
-        {% regroup competition.list by group as group_list %}
-        <!---->
-        {% for group in group_list %}
-        <h2>{{ group.grouper }}</h2>
-        <div class="fixtures">
-          {% for fixture in group.list %}
-          <div class="fixtue">
-            <a href="" class="fixture flex">
+        {% for date in fixture_list %}
+        <h2>Debug: Date Group - {{ date.grouper }}</h2>
+        {% if date.list %}
+        <h2>{{ date.grouper|date:"D, d M Y" }}</h2>
+        <div class="fixture">
+          {% for fixture in date.list %}
+          <div class="fixture flex">
+            <div class="fix-left">
               <span>{{ fixture.team1 }}</span>
-              {% if fixture.school.badge %}
               <img src="{{ fixture.team1.school.badge.url }}" alt="" />
+            </div>
+            <div class="fix-center">
+              {% if fixture.date %}
+              <a href="{% url 'fixture' fixture.id %}"
+                >{{ fixture.date|time:"H:i" }}</a
+              >
               {% else %}
-              <img src="{% static '/images/logo.png'%}" alt="" />{% endif %}
-            </a>
-            <div class="mid">
-              {% if fixture.status == "Pending" %}
-              <h4>{{ fixture.date|time:"H:i" }}</h4>
-              <p>{{ fixture.date|date:"F j, Y" }}</p>
-
-
-              {% else %}
-              <h6>{{fixture.team1_score}} - {{fixture.team2_score}}</h6>
+              <a href="{% url 'fixture' fixture.id %}">DETAILS</a>
               {% endif %}
             </div>
-            <a href="" class="fixture flex">
-              {% if fixture.school.badge %}
+            <div class="fix-right">
               <img src="{{ fixture.team2.school.badge.url }}" alt="" />
-              {% else %}
-              <img src="{% static '/images/logo.png'%}" alt="" />{% endif %}
               <span>{{ fixture.team2 }}</span>
-            </a>
+            </div>
           </div>
           <hr />
           {% endfor %}
         </div>
-        {% endfor %} {% endfor %}
+        {% else %}
+        <p>No fixtures for this date.</p>
+        {% endif %} {% endfor %}
       </div>
     </div>
   </div>

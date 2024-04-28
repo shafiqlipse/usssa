@@ -14,7 +14,7 @@ from football.models import Competition
 
 
 def footballFixtures(request):
-    fixtures = Fixture.objects.all().order_by("-date")
+    fixtures = Fixture.objects.filter(status = "Pending").order_by("date")
 
     # Group fixtures by competition and then by date
 
@@ -24,7 +24,7 @@ def footballFixtures(request):
 
 def footballResults(request):
     # Assuming the sport name is "football"
-    fixtures = Fixture.objects.filter(competition=1).exclude(status="pending")
+    fixtures = Fixture.objects.all().exclude(status="Pending").order_by("date")
     # print(fixtures)
     context = {"fixtures": fixtures}
     return render(request, "football/results.html", context)

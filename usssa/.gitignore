@@ -1,4 +1,5 @@
+# ignnore settings
 settings.py
+
 */migrations/
 
-.env
